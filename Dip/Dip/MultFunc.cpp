@@ -18,7 +18,7 @@ public:
 	typedef unsigned long long uint8;
 
 
-	uint8 key(const uint4 id1, const uint4 id2)
+	static uint8 key(const uint4 id1, const uint4 id2)
 	{
 		return uint8(id1) << 32 | id2;
 	}
