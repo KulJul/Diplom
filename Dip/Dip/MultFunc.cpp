@@ -7,11 +7,6 @@
 #include <unordered_map>
 using namespace std;
 
-struct item
-{
-	int ID;
-	std::function<void()> special;
-};
 
 
 template <typename T, typename T2>
@@ -23,7 +18,7 @@ public:
 	typedef unsigned long long uint8;
 
 
-	uint8 keyF(const uint4 id1, const uint4 id2)
+	uint8 key(const uint4 id1, const uint4 id2)
 	{
 		return uint8(id1) << 32 | id2;
 	}
@@ -32,14 +27,13 @@ public:
 	typedef void (T::*CollisionHandler)(T2& other);
 	typedef std::unordered_map<uint8, CollisionHandler> CollisionHandlerMap;
 
-	CollisionHandlerMap collisionCases;
+	static CollisionHandlerMap collisionCases;
 
 
-	std::unordered_map<uint8, uint4> mapCollisionCases;
 
-	void  addHandler(const uint4 id1, const uint4 id2, const CollisionHandler handler)
+	static void  addHandler(const uint4 id1, const uint4 id2, const CollisionHandler handler)
 	{
-		mapCollisionCases.insert({ keyF(id1, id2), handler });
+		collisionCases.insert({ key(id1, id2), handler });
 	}
 
 
@@ -128,8 +122,8 @@ void collide_tester(Objs& objs)
 
 
 int main() {
-	MyMap<MyClass, asteroid> temp;
-	temp.addHandler(typeid(asteroid).hash_code(), typeid(asteroid).hash_code(), &MyClass::collide_as_as);
+	//MyMap<MyClass, asteroid> temp;
+	MyMap<MyClass, asteroid>::addHandler(typeid(asteroid).hash_code(), typeid(asteroid).hash_code(), &MyClass::collide_as_as);
 
 
 }

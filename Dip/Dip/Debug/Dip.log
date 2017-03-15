@@ -1,9 +1,31 @@
 ﻿  MultFunc.cpp
-d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(42): error C2065: id3: необъявленный идентификатор
-  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(41): note: при компиляции функции-члена "<Нет данных>" класса класс <Нет данных>
-  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(150): note: см. ссылку на создание экземпляров функции шаблон при компиляции "void MyMap<MyClass,space_ship>::addHandler(const MyMap<MyClass,space_ship>::uint4,const MyMap<MyClass,space_ship>::uint4,void (__thiscall MyClass::* const )(T2 &))"
+d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(36): error C2352: MyMap<MyClass,asteroid>::key: недопустимый вызов нестатической функции-члена
+  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(21): note:  см. объявление "MyMap<MyClass,asteroid>::key"
+  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(35): note: при компиляции функции-члена "<Нет данных>" класса класс <Нет данных>
+  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(126): note: см. ссылку на создание экземпляров функции шаблон при компиляции "void MyMap<MyClass,asteroid>::addHandler(const MyMap<MyClass,asteroid>::uint4,const MyMap<MyClass,asteroid>::uint4,void (__thiscall MyClass::* const )(T2 &))"
           with
           [
-              T2=space_ship
+              T2=asteroid
           ]
-  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(149): note: см. в справочнике сведения о создании экземпляров класса класс шаблон при компиляции "MyMap<MyClass,space_ship>"
+  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(126): note: см. в справочнике сведения о создании экземпляров класса класс шаблон при компиляции "MyMap<MyClass,asteroid>"
+d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(36): error C2664: "std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<const _Kty,_Ty>>>> std::_Hash<std::_Umap_traits<_Kty,_Ty,std::_Uhash_compare<_Kty,_Hasher,_Keyeq>,_Alloc,false>>::insert(std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<const _Kty,_Ty>>>>,const std::pair<const _Kty,_Ty> &)": невозможно преобразовать аргумент 1 из "initializer list" в "std::pair<const _Kty,_Ty> &&"
+          with
+          [
+              _Kty=MyMap<MyClass,asteroid>::uint8,
+              _Ty=void (__thiscall MyClass::* )(asteroid &),
+              _Hasher=std::hash<unsigned __int64>,
+              _Keyeq=std::equal_to<MyMap<T,T2>::uint8>,
+              _Alloc=std::allocator<std::pair<const MyMap<MyClass,asteroid>::uint8,void (__thiscall MyClass::* )(asteroid &)>>
+          ]
+          and
+          [
+              _Kty=MyMap<MyClass,asteroid>::uint8,
+              _Ty=void (__thiscall MyClass::* )(asteroid &)
+          ]
+  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(36): note: Причина: невозможно преобразовать "initializer list" в "std::pair<const _Kty,_Ty>"
+          with
+          [
+              _Kty=MyMap<MyClass,asteroid>::uint8,
+              _Ty=void (__thiscall MyClass::* )(asteroid &)
+          ]
+  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(36): note: Ни один конструктор не смог принять исходный тип, либо разрешение перегрузки конструктора неоднозначно
