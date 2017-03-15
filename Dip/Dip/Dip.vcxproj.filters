@@ -15,16 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\ConsoleApplication2\ConsoleApplication2\game_hierarchy.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
+    <ClCompile Include="MultFunc.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\ConsoleApplication2\ConsoleApplication2\ConsoleApplication2.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
+    <ClInclude Include="game_hierarchy.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,9 +1,0 @@
-﻿  ConsoleApplication2.cpp
-c:\users\yulia\documents\visual studio 2017\projects\consoleapplication2\consoleapplication2\consoleapplication2.cpp(42): error C2065: id3: необъявленный идентификатор
-  c:\users\yulia\documents\visual studio 2017\projects\consoleapplication2\consoleapplication2\consoleapplication2.cpp(41): note: при компиляции функции-члена "<Нет данных>" класса класс <Нет данных>
-  c:\users\yulia\documents\visual studio 2017\projects\consoleapplication2\consoleapplication2\consoleapplication2.cpp(150): note: см. ссылку на создание экземпляров функции шаблон при компиляции "void MyMap<MyClass,space_ship>::addHandler(const MyMap<MyClass,space_ship>::uint4,const MyMap<MyClass,space_ship>::uint4,void (__thiscall MyClass::* const )(T2 &))"
-          with
-          [
-              T2=space_ship
-          ]
-  c:\users\yulia\documents\visual studio 2017\projects\consoleapplication2\consoleapplication2\consoleapplication2.cpp(149): note: см. в справочнике сведения о создании экземпляров класса класс шаблон при компиляции "MyMap<MyClass,space_ship>"
