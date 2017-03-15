@@ -1,31 +1,3 @@
 ﻿  MultFunc.cpp
-d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(36): error C2352: MyMap<MyClass,asteroid>::key: недопустимый вызов нестатической функции-члена
-  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(21): note:  см. объявление "MyMap<MyClass,asteroid>::key"
-  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(35): note: при компиляции функции-члена "<Нет данных>" класса класс <Нет данных>
-  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(126): note: см. ссылку на создание экземпляров функции шаблон при компиляции "void MyMap<MyClass,asteroid>::addHandler(const MyMap<MyClass,asteroid>::uint4,const MyMap<MyClass,asteroid>::uint4,void (__thiscall MyClass::* const )(T2 &))"
-          with
-          [
-              T2=asteroid
-          ]
-  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(126): note: см. в справочнике сведения о создании экземпляров класса класс шаблон при компиляции "MyMap<MyClass,asteroid>"
-d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(36): error C2664: "std::_List_iterator<std::_List_val<std::_List_simple_types<std::pair<const _Kty,_Ty>>>> std::_Hash<std::_Umap_traits<_Kty,_Ty,std::_Uhash_compare<_Kty,_Hasher,_Keyeq>,_Alloc,false>>::insert(std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<const _Kty,_Ty>>>>,const std::pair<const _Kty,_Ty> &)": невозможно преобразовать аргумент 1 из "initializer list" в "std::pair<const _Kty,_Ty> &&"
-          with
-          [
-              _Kty=MyMap<MyClass,asteroid>::uint8,
-              _Ty=void (__thiscall MyClass::* )(asteroid &),
-              _Hasher=std::hash<unsigned __int64>,
-              _Keyeq=std::equal_to<MyMap<T,T2>::uint8>,
-              _Alloc=std::allocator<std::pair<const MyMap<MyClass,asteroid>::uint8,void (__thiscall MyClass::* )(asteroid &)>>
-          ]
-          and
-          [
-              _Kty=MyMap<MyClass,asteroid>::uint8,
-              _Ty=void (__thiscall MyClass::* )(asteroid &)
-          ]
-  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(36): note: Причина: невозможно преобразовать "initializer list" в "std::pair<const _Kty,_Ty>"
-          with
-          [
-              _Kty=MyMap<MyClass,asteroid>::uint8,
-              _Ty=void (__thiscall MyClass::* )(asteroid &)
-          ]
-  d:\новая папка (3)\diplom\dip\dip\multfunc.cpp(36): note: Ни один конструктор не смог принять исходный тип, либо разрешение перегрузки конструктора неоднозначно
+MultFunc.obj : error LNK2001: неразрешенный внешний символ ""public: static class std::unordered_map<unsigned __int64,void (__thiscall MyClass::*)(struct asteroid &),struct std::hash<unsigned __int64>,struct std::equal_to<unsigned __int64>,class std::allocator<struct std::pair<unsigned __int64 const ,void (__thiscall MyClass::*)(struct asteroid &)> > > MyMap<class MyClass,struct asteroid>::collisionCases" (?collisionCases@?$MyMap@VMyClass@@Uasteroid@@@@2V?$unordered_map@_KP8MyClass@@AEXAAUasteroid@@@ZU?$hash@_K@std@@U?$equal_to@_K@4@V?$allocator@U?$pair@$$CB_KP8MyClass@@AEXAAUasteroid@@@Z@std@@@4@@std@@A)"
+D:\Новая папка (3)\Diplom\Dip\Debug\Dip.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
