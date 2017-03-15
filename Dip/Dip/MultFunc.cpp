@@ -7,15 +7,15 @@
 #include <unordered_map>
 using namespace std;
 
-
+typedef unsigned uint4;
+typedef unsigned long long uint8;
 
 template <typename T>
 class MyMap
 {
 
 public:
-	typedef unsigned uint4;
-	typedef unsigned long long uint8;
+
 
 
 	static uint8 key(const uint4 id1, const uint4 id2)
@@ -24,25 +24,27 @@ public:
 	}
 
 
-	typedef void (*CollisionHandler)(T& other);
-	typedef std::unordered_map<uint8, CollisionHandler> CollisionHandlerMap;
+	//typedef void(*CollisionHandler)(T& other);
+	//typedef std::unordered_map<uint8, void(*)(T& other)> CollisionHandlerMap;
 
-	static CollisionHandlerMap* collisionCases;
+	static std::unordered_map<uint8, void(*)(T& other)>* collisionCases;// = new std::unordered_map<uint8, void(*)(T& other)>;
 
+	//void *operator new()
+	//{
+	//	collisionCases = new CollisionHandlerMap;
+	//}
 
-
-	static void  addHandler(const uint4 id1, const uint4 id2, const CollisionHandler handler)
+	static void  addHandler(const uint4 id1, const uint4 id2,  void(*handler)(T&))
 	{
-		//(*collisionCases).insert({ key(id1, id2), handler });
+		(*collisionCases).insert({ key(id1, id2), handler });
 	}
 
 
 };
 
 
-template <class T>
-	const unsigned int
-		MyMap<T>::collisionCases = new CollisionHandlerMap;
+template <class T> std::unordered_map<uint8, void(*)(T& other)>* MyMap<T>::collisionCases = new std::unordered_map<uint8, void(*)(T& other)>;
+
 
 
 vector<game_object*>& get_obj_pointers()
