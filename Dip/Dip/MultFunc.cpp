@@ -9,7 +9,7 @@ using namespace std;
 
 
 
-template <typename T, typename T2>
+template <typename T>
 class MyMap
 {
 
@@ -24,21 +24,25 @@ public:
 	}
 
 
-	typedef void (T::*CollisionHandler)(T2& other);
+	typedef void (*CollisionHandler)(T& other);
 	typedef std::unordered_map<uint8, CollisionHandler> CollisionHandlerMap;
 
-	static CollisionHandlerMap collisionCases;
+	static CollisionHandlerMap* collisionCases;
 
 
 
 	static void  addHandler(const uint4 id1, const uint4 id2, const CollisionHandler handler)
 	{
-		collisionCases.insert({ key(id1, id2), handler });
+		//(*collisionCases).insert({ key(id1, id2), handler });
 	}
 
 
 };
 
+
+template <class T>
+	const unsigned int
+		MyMap<T>::collisionCases = new CollisionHandlerMap;
 
 
 vector<game_object*>& get_obj_pointers()
@@ -90,7 +94,7 @@ public:
 		return "Asteroid collides with space ship";
 	}
 
-	void collide_as_as(asteroid& other)
+	static void collide_as_as(asteroid& other)
 	{
 		//return "Asteroid collides with asteroid";
 	}
@@ -123,7 +127,7 @@ void collide_tester(Objs& objs)
 
 int main() {
 	//MyMap<MyClass, asteroid> temp;
-	MyMap<MyClass, asteroid>::addHandler(typeid(asteroid).hash_code(), typeid(asteroid).hash_code(), &MyClass::collide_as_as);
+	MyMap<asteroid>::addHandler(typeid(asteroid).hash_code(), typeid(asteroid).hash_code(), MyClass::collide_as_as);
 
 
 }
