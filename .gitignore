@@ -7,3 +7,5 @@
 *.mdf
 *.ldf
 **/x64/Debug/
+**/Debug/
+*.VC.db
