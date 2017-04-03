@@ -38,33 +38,63 @@ public:
 	template<class TList>  static void  INit();
 
 
-	template <class Tobj, class T> static void TryMakeCall(uint4 code, Tobj* obj)
+	//функции для "раскрытия первого типа"
+	template <class TBase, class DeriveType, class DeriviesTypes> static void TryMakeCallFirstType(uint4 code1, uint4 code2, TBase* obj1, TBase* obj2)
 	{
 		//изменить на полную версию кода, uint8!!
-		uint4 codeT = typeid(T).hash_code();
-		if (codeT == code)
+		uint4 deriveTypeCode = typeid(DeriveType).hash_code();
+		if (deriveTypeCode == code1)
 		{
-			T* typeObj = dynamic_cast<T*>(obj);
-			void(*fnc) (T&) = (MyMap<T>::collisionCases->find(code))->second;
-			T tObj = *typeObj;
-			fnc(tObj);
+			DeriveType* typeObj = dynamic_cast<DeriveType*>(obj);
+
+			MakeCall_ListSecondType<TBase, DeriveType, DeriviesTypes>(TList x, code1, code2, typeObj, obj2);
+
+			//void(*fnc) (T&) = (MyMap<DeriveType>::collisionCases->find(code1))->second;
+			//DeriveType tObj = *typeObj;
+			//fnc(tObj);
 		}
 	}
 
-
-	template <class T, class TList > static void MakeCall_List(TList x, uint4 code, T* obj)
+	template <class TBase, class DeriviesTypes1, class DeriviesTypes2> static void MakeCall_ListFirstType(DeriviesTypes1 x, uint4 code1, uint4 code2, TBase* obj1, TBase* obj2)
 	{
-		TryMakeCall<T, TList::Head>(code, obj);
-		MakeCall_List(TList::Tail(),code, obj);
+		TryMakeCallFirstType<TBase, DeriviesTypes1::Head, DeriviesTypes2>(code1, code2, obj1, obj2);
+		MakeCall_ListFirstType(DeriviesTypes1::Tail(),code1, code2, obj1, obj2);
 	}
 
-	template<class T>
-	static void MakeCall_List(NullType, uint4 code, T* obj)
+	template<class TBase>
+	static void MakeCall_ListFirstType(NullType, uint4 code1, uint4 code2, TBase* obj1, TBase* obj2)
 	{
 	}
 
 
-	template<class T, class TList> static void Call(T* obj);
+	//функции для "раскрытия второго типа"
+	template <class TBase, class TObj1, class DeriveType> static void TryMakeCallSecondType(uint4 code1, uint4 code2, TObj1* obj1, TBase* obj2)
+	{
+		//изменить на полную версию кода, uint8!!
+		uint4 deriveTypeCode = typeid(DeriveType).hash_code();
+		if (deriveTypeCode == code2)
+		{
+			DeriveType* typeObj = dynamic_cast<DeriveType*>(obj);
+
+			void(*fnc) (TObj1&, DeriveType&) = (MyMap<TObj1,DeriveType>::collisionCases->find(MyMap<TObj1, DeriveType>::key(code1, code2)))->second;
+			DeriveType tObj2 = *typeObj;
+			fnc(obj1, tObj2);
+		}
+	}
+
+	template <class TBase, class TObj1, class DeriviesTypes > static void MakeCall_ListSecondType(DeriviesTypes x, uint4 code1, uint4 code2, TObj1* obj1, TBase* obj2)
+	{
+		TryMakeCallSecondType<TBase, TObj1, DeriviesTypes::Head>(code1, code2, obj1, obj2);
+		MakeCall_ListSecondType(DeriviesTypes::Tail(), code1, code2, obj1, obj2);
+	}
+
+	template<class TBase, class Tobj1>
+	static void MakeCall_ListSecondType(NullType, uint4 code1, uint4 code2, Tobj1* obj1, TBase* obj2)
+	{
+	}
+
+
+	template<class T, class TList> static  void Call(T* obj1, T* obj2);
 };
 
 

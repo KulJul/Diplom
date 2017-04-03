@@ -16,11 +16,11 @@
 //#include <boost/any.hpp>
 //#include <stdafh.h>
 #include "MyMap.h"
-
+#include "MyMap.cpp"
 
 #include "Caller.h"
 
-#include "MyMap.cpp"
+
 
 
 
@@ -51,13 +51,16 @@ template<class TList> void  Caller::INit()
 	Caller::FillHashCodesFor_List<TList>(TList());
 }
 
-template<class T, class TList>  void Caller::Call(T* obj)
+template<class T, class TList>  void Caller::Call(T* obj1, T* obj2)
 {
-	int* vptr = *(int**)obj;
-	uint4 code = Caller::hashCodesByVirtualAddress->find(vptr)->second;
+	int* vptr1 = *(int**)obj1;
+	int* vptr2 = *(int**)obj2;
+
+	uint4 code1 = Caller::hashCodesByVirtualAddress->find(vptr1)->second;
+	uint4 code2 = Caller::hashCodesByVirtualAddress->find(vptr2)->second;
 
 	//גûחûגאול
-	Caller::MakeCall_List<T,TList>(TList(), code, obj);
+	Caller::MakeCall_ListFirstType<T,TList, TList>(TList(), code1, code2, obj1, obj2);
 
 }
 
@@ -84,9 +87,9 @@ public:
 		return "Space ship collides with asteroid";
 	}
 
-	const char* collide_as_sh(asteroid*, space_ship*)
+	static void collide_as_sh(asteroid&, space_ship&)
 	{
-		return "Asteroid collides with space ship";
+		auto l = "Asteroid collides with space ship";
 	}
 
 	static void collide_as_as(asteroid& other)
@@ -164,26 +167,27 @@ void static_for(T1* obj, NullType)
 
 int main() {
 
-	space_ship astSp;
-	asteroid ast2;
-	game_object* o = &ast2;
 
+	asteroid asteroidObj;
+	space_ship shipObj;
 
-	asteroid* typeObj = dynamic_cast<asteroid*>(o);
+	game_object* asteroidGameObj  = &asteroidObj;
+	game_object* shipGameObj = &shipObj;
+
 
 		
-	MyMap<asteroid>::addHandler(typeid(asteroid).hash_code(),  MyClass::collide_as_as);
-	MyMap<space_ship>::addHandler(typeid(space_ship).hash_code(),  MyClass::collide_sh_sh);
-	
-	using typesCollection = typename TypeCollectionMake<asteroid*, space_ship*>::Collection;
+	MyMap<asteroid, space_ship>::addHandler(MyClass::collide_as_sh);
+	//MyMap<space_ship>::addHandler(typeid(space_ship).hash_code(),  MyClass::collide_sh_sh);
+	//
+	//using typesCollection = typename TypeCollectionMake<asteroid*, space_ship*>::Collection;
 
 	Caller::INit<TypeCollectionMake<asteroid, space_ship>::Collection>();
 
-	Caller::Call<game_object, TypeCollectionMake<asteroid, space_ship>::Collection>(o);
+	Caller::Call<game_object, TypeCollectionMake<asteroid, space_ship>::Collection>(asteroidGameObj, shipGameObj);
 	
 
-	static_for<game_object, typesCollection>(o, typesCollection());
-	auto l = 2;
+	//static_for<game_object, typesCollection>(o, typesCollection());
+	//auto l = 2;
 
 
 	/*
