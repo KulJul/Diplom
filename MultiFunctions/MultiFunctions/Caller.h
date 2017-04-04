@@ -45,9 +45,9 @@ public:
 		uint4 deriveTypeCode = typeid(DeriveType).hash_code();
 		if (deriveTypeCode == code1)
 		{
-			DeriveType* typeObj = dynamic_cast<DeriveType*>(obj);
+			DeriveType* typeObj = dynamic_cast<DeriveType*>(obj1);
 
-			MakeCall_ListSecondType<TBase, DeriveType, DeriviesTypes>(TList x, code1, code2, typeObj, obj2);
+			MakeCall_ListSecondType<TBase, DeriveType, DeriviesTypes>(DeriviesTypes(), code1, code2, typeObj, obj2);
 
 			//void(*fnc) (T&) = (MyMap<DeriveType>::collisionCases->find(code1))->second;
 			//DeriveType tObj = *typeObj;
@@ -74,11 +74,11 @@ public:
 		uint4 deriveTypeCode = typeid(DeriveType).hash_code();
 		if (deriveTypeCode == code2)
 		{
-			DeriveType* typeObj = dynamic_cast<DeriveType*>(obj);
+			DeriveType* typeObj = dynamic_cast<DeriveType*>(obj2);
 
 			void(*fnc) (TObj1&, DeriveType&) = (MyMap<TObj1,DeriveType>::collisionCases->find(MyMap<TObj1, DeriveType>::key(code1, code2)))->second;
 			DeriveType tObj2 = *typeObj;
-			fnc(obj1, tObj2);
+			fnc(*obj1, tObj2);
 		}
 	}
 
