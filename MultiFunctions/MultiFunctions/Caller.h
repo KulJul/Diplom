@@ -68,10 +68,10 @@ public:
 
 
 	//экспериментальные функции с которыми все ок
-	template <class Tobj, class T> static void TryMakeCallAllRight(uint4 code1, uint4 code2, Tobj* obj1, Tobj* obj2)
+	template <class Tobj, class DeriveType> static void TryMakeCallAllRight(uint4 code1, uint4 code2, Tobj* obj1, Tobj* obj2)
 	{
 		//изменить на полную версию кода, uint8!!
-		uint4 codeT = typeid(T).hash_code();
+		uint4 codeT = typeid(DeriveType).hash_code();
 		if (codeT == code)
 		{
 			//T* typeObj = dynamic_cast<T*>(obj);
@@ -82,10 +82,10 @@ public:
 	}
 
 
-	template <class T, class TList > static void MakeCall_ListAllRight(TList x, uint4 code1, uint4 code2, T* obj1, T* obj2)
+	template <class T, class DeriviesTypes > static void MakeCall_ListAllRight(DeriviesTypes x, uint4 code1, uint4 code2, T* obj1, T* obj2)
 	{
-		TryMakeCallAllRight<T, TList::Head>(code1, code2, obj1, obj2);
-		MakeCall_ListAllRight(TList::Tail(), code1, code2, obj1, obj2);
+		TryMakeCallAllRight<T, DeriviesTypes::Head>(code1, code2, obj1, obj2);
+		MakeCall_ListAllRight(DeriviesTypes::Tail(), code1, code2, obj1, obj2);
 	}
 
 	template<class T>
