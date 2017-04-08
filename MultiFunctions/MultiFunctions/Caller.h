@@ -67,6 +67,36 @@ public:
 	}
 
 
+	//экспериментальные функции с которыми все ок
+	template <class Tobj, class T> static void TryMakeCallAllRight(uint4 code1, uint4 code2, Tobj* obj)
+	{
+		//изменить на полную версию кода, uint8!!
+		uint4 codeT = typeid(T).hash_code();
+		if (codeT == code)
+		{
+			//T* typeObj = dynamic_cast<T*>(obj);
+			//void(*fnc) (T&) = (MyMap<T>::collisionCases->find(code))->second;
+			//T tObj = *typeObj;
+			//fnc(tObj);
+		}
+	}
+
+
+	template <class T, class TList > static void MakeCall_ListAllRight(TList x, uint4 code1, uint4 code2, T* obj)
+	{
+		TryMakeCallAllRight<T, TList::Head>(code1, code2, obj);
+		MakeCall_ListAllRight(TList::Tail(), code1, code2, obj);
+	}
+
+	template<class T>
+	static void MakeCall_ListAllRight(NullType, uint4 code1, uint4 code2, T* obj)
+	{
+	}
+
+
+
+
+
 	//функции для "раскрытия второго типа"
 	template <class TBase, class TObj1, class DeriveType> static void TryMakeCallSecondType(uint4 code1, uint4 code2, TObj1* obj1, TBase* obj2)
 	{

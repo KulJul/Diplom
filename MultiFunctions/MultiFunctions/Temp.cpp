@@ -61,7 +61,7 @@ template<class T, class TList>  void Caller::Call(T* obj1, T* obj2)
 
 	//גûחûגאול
 	Caller::MakeCall_ListFirstType<T,TList, TList>(TList(), code1, code2, obj1, obj2);
-
+	Caller::MakeCall_ListAllRight<T, TList>(TList(), code1, code2,  obj1);
 }
 
 
