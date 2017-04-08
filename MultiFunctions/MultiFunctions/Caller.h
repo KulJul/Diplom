@@ -46,12 +46,7 @@ public:
 		if (deriveTypeCode == code1)
 		{
 			DeriveType* typeObj = dynamic_cast<DeriveType*>(obj1);
-
 			MakeCall_ListSecondType<TBase, DeriveType, DeriviesTypes>(DeriviesTypes(), code1, code2, typeObj, obj2);
-
-			//void(*fnc) (T&) = (MyMap<DeriveType>::collisionCases->find(code1))->second;
-			//DeriveType tObj = *typeObj;
-			//fnc(tObj);
 		}
 	}
 
