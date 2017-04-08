@@ -60,8 +60,7 @@ template<class T, class TList>  void Caller::Call(T* obj1, T* obj2)
 	uint4 code2 = Caller::hashCodesByVirtualAddress->find(vptr2)->second;
 
 	//גûחûגאול
-	Caller::MakeCall_ListFirstType<T,TList, TList>(TList(), code1, code2, obj1, obj2);
-	Caller::MakeCall_ListAllRight<T, TList, TList>(TList(), TList(), code1, code2,  obj1, obj2);
+	Caller::MakeCall_ListFirstType<T,TList, TList>(TList(), TList(), code1, code2, obj1, obj2);
 }
 
 

@@ -55,46 +55,16 @@ public:
 		}
 	}
 
-	template <class TBase, class DeriviesTypes1, class DeriviesTypes2> static void MakeCall_ListFirstType(DeriviesTypes1 x, uint4 code1, uint4 code2, TBase* obj1, TBase* obj2)
+	template <class TBase, class DeriviesTypes1, class DeriviesTypes2> static void MakeCall_ListFirstType(DeriviesTypes1 x, DeriviesTypes2 y, uint4 code1, uint4 code2, TBase* obj1, TBase* obj2)
 	{
 		TryMakeCallFirstType<TBase, DeriviesTypes1::Head, DeriviesTypes2>(code1, code2, obj1, obj2);
-		MakeCall_ListFirstType(DeriviesTypes1::Tail(),code1, code2, obj1, obj2);
-	}
-
-	template<class TBase>
-	static void MakeCall_ListFirstType(NullType, uint4 code1, uint4 code2, TBase* obj1, TBase* obj2)
-	{
-	}
-
-
-	//экспериментальные функции с которыми все ок
-	template <class TBase, class DeriviesType, class DeriviesTypes> static void TryMakeCallAllRight(uint4 code1, uint4 code2, TBase* obj1, TBase* obj2)
-	{
-		//изменить на полную версию кода, uint8!!
-		uint4 codeT = typeid(DeriveType).hash_code();
-		if (codeT == code)
-		{
-			//T* typeObj = dynamic_cast<T*>(obj);
-			//void(*fnc) (T&) = (MyMap<T>::collisionCases->find(code))->second;
-			//T tObj = *typeObj;
-			//fnc(tObj);
-		}
-	}
-
-
-	template <class TBase, class DeriviesTypes1, class DeriviesTypes2> static void MakeCall_ListAllRight(DeriviesTypes1 x, DeriviesTypes2 y, uint4 code1, uint4 code2, TBase* obj1, TBase* obj2)
-	{
-		TryMakeCallAllRight<TBase, DeriviesTypes1::Head, DeriviesTypes2>(code1, code2, obj1, obj2);
-		MakeCall_ListAllRight(DeriviesTypes1::Tail(), DeriviesTypes2(), code1, code2, obj1, obj2);
+		MakeCall_ListFirstType(DeriviesTypes1::Tail(), DeriviesTypes2(), code1, code2, obj1, obj2);
 	}
 
 	template<class TBase, class DeriviesTypes2>
-	static void MakeCall_ListAllRight(NullType, DeriviesTypes2, uint4 code1, uint4 code2, TBase* obj1, TBase* obj2)
+	static void MakeCall_ListFirstType(NullType, DeriviesTypes2, uint4 code1, uint4 code2, TBase* obj1, TBase* obj2)
 	{
 	}
-
-
-
 
 
 	//функции для "раскрытия второго типа"
