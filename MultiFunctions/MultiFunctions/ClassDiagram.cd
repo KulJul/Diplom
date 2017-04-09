@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MyClass">
+    <Position X="8" Y="5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQCgAAAAAAAAAAAAAAAAAAEAAAABACAAAAAAAAAA=</HashCode>
+      <FileName>Temp.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyMap&lt;T1, T2&gt;">
+    <Position X="1.75" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAAAACAAAAAA=</HashCode>
+      <FileName>MyMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Caller">
+    <Position X="2.5" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAABgAAAAAAAEAAAAAAQAAAIAACEAAAAI=</HashCode>
+      <FileName>Caller.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="game_object" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>game_hierarchy.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="space_ship" Collapsed="true">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>game_hierarchy.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="space_station" Collapsed="true">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>game_hierarchy.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="asteroid" Collapsed="true">
+    <Position X="5.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>game_hierarchy.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
