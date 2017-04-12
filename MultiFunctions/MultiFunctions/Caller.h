@@ -43,6 +43,7 @@ public:
 	{
 		//изменить на полную версию кода, uint8!!
 		uint4 deriveTypeCode = typeid(DeriveType).hash_code();
+		uint4 code1Obj = typeid(obj1).hash_code();
 		if (deriveTypeCode == code1)
 		{
 			DeriveType* typeObj = dynamic_cast<DeriveType*>(obj1);

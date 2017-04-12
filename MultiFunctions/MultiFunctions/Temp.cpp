@@ -173,30 +173,23 @@ int main() {
 	game_object* asteroidGameObj  = &asteroidObj;
 	game_object* shipGameObj = &shipObj;
 
+	game_object& asteroidGameRef = asteroidObj;
+	game_object& shipGameRef = shipObj;
+
+	size_t asteroidHCD = typeid(asteroid).hash_code();
+	size_t shipHCD = typeid(space_ship).hash_code();
+
+	size_t asteroidPointerHCD = typeid(asteroidGameObj).hash_code();
+	size_t shipPointerHCD = typeid(shipGameObj).hash_code();
+
+	size_t asteroidRefHCD = typeid(asteroidGameRef).hash_code();
+	size_t shipRefHCH = typeid(shipGameRef).hash_code();
 
 		
 	MyMap<asteroid, space_ship>::addHandler(MyClass::collide_as_sh);
-	//MyMap<space_ship>::addHandler(typeid(space_ship).hash_code(),  MyClass::collide_sh_sh);
-	//
-	//using typesCollection = typename TypeCollectionMake<asteroid*, space_ship*>::Collection;
 
 	Caller::INit<TypeCollectionMake<asteroid, space_ship>::Collection>();
 
 	Caller::Call<game_object, TypeCollectionMake<asteroid, space_ship>::Collection>(asteroidGameObj, shipGameObj);
 	
-
-	//static_for<game_object, typesCollection>(o, typesCollection());
-	//auto l = 2;
-
-
-	/*
-	std::cout << "Length<> : " << typeid(IntTypes).name() << '\n';
-	std::cout << "Length<> : " << typeid(IntTypes::Tail::Head).name() << '\n';
-
-
-
-	std::cout << "IndexOf2 : " << typeid(GetElement<IntTypes, 2>::Collection).name() << '\n';
-
-
-	std::cout << "Length<> : " << Length<IntTypes>::value << '\n';*/
 }
