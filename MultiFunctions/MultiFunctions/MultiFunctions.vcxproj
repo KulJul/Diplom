@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -20,13 +20,43 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp" />
+    <ClCompile Include="DinamicMultimethod.cpp" />
+    <ClCompile Include="FunctorDispatcher.cpp" />
     <ClCompile Include="MyMap.cpp" />
+    <ClCompile Include="StaticMultimethod.cpp" />
     <ClCompile Include="Temp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Caller.h" />
     <ClInclude Include="ContainerMap.h" />
     <ClInclude Include="game_hierarchy.hpp" />
+    <ClInclude Include="Loki\AbstractFactory.h" />
+    <ClInclude Include="Loki\AssocVector.h" />
+    <ClInclude Include="Loki\ContainerMap.h" />
+    <ClInclude Include="Loki\DataGenerators.h" />
+    <ClInclude Include="Loki\EmptyType.h" />
+    <ClInclude Include="Loki\ExecuteSimpleMethod.h" />
+    <ClInclude Include="Loki\Factory.h" />
+    <ClInclude Include="Loki\Functor.h" />
+    <ClInclude Include="Loki\HierarchyGenerators.h" />
+    <ClInclude Include="Loki\LokiTypeInfo.h" />
+    <ClInclude Include="Loki\MinMax.h" />
+    <ClInclude Include="Loki\MultiMethods.h" />
+    <ClInclude Include="Loki\MyMap.h" />
+    <ClInclude Include="Loki\NullType.h" />
+    <ClInclude Include="Loki\SimpleMultiMethod.h" />
+    <ClInclude Include="Loki\Singleton.h" />
+    <ClInclude Include="Loki\SmallObj.h" />
+    <ClInclude Include="Loki\SmartPtr.h" />
+    <ClInclude Include="Loki\static_check.h" />
+    <ClInclude Include="Loki\Threads.h" />
+    <ClInclude Include="Loki\typecollection.h" />
+    <ClInclude Include="Loki\Typelist.h" />
+    <ClInclude Include="Loki\TypeManip.h" />
+    <ClInclude Include="Loki\TypeTraits.h" />
+    <ClInclude Include="Loki\Variant.h" />
+    <ClInclude Include="Loki\VC_Alignment.h" />
+    <ClInclude Include="Loki\Visitor.h" />
     <ClInclude Include="MyMap.h" />
     <ClInclude Include="typecollection.h" />
   </ItemGroup>
@@ -41,26 +71,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>

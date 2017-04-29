@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Заголовочные файлы\Loki">
+      <UniqueIdentifier>{8a0639c1-fe8f-4950-b684-92b0df4d7f0b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp">
@@ -22,6 +25,15 @@
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
     <ClCompile Include="Temp.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMultimethod.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="DinamicMultimethod.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctorDispatcher.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
@@ -40,6 +52,87 @@
     </ClInclude>
     <ClInclude Include="typecollection.h">
       <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\AbstractFactory.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\AssocVector.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\ContainerMap.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\DataGenerators.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\EmptyType.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\ExecuteSimpleMethod.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\Factory.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\Functor.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\HierarchyGenerators.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\LokiTypeInfo.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\MinMax.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\MultiMethods.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\MyMap.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\NullType.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\SimpleMultiMethod.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\Singleton.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\SmallObj.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\SmartPtr.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\static_check.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\Threads.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\typecollection.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\Typelist.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\TypeManip.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\TypeTraits.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\Variant.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\VC_Alignment.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="Loki\Visitor.h">
+      <Filter>Заголовочные файлы\Loki</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
