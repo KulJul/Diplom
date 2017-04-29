@@ -163,7 +163,7 @@ void static_for(T1* obj, NullType)
 }
 
 
-
+/*
 int main() {
 
 
@@ -192,4 +192,4 @@ int main() {
 
 	Caller::Call<game_object, TypeCollectionMake<asteroid, space_ship>::Collection>(asteroidGameObj, shipGameObj);
 	
-}
+}*/

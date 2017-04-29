@@ -51,7 +51,7 @@
 		//
 
 		typedef Loki::BasicDispatcher< Left0 > MyDispatcher;
-
+		/*
 		int main()
 		{
 			Left0 l0;
@@ -78,3 +78,4 @@
 			}
 		}
 		
+		*/

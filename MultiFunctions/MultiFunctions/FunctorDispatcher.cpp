@@ -47,7 +47,7 @@
 		//
 
 		typedef Loki::FunctorDispatcher< Left0 > MyDispatcher;
-
+		/*
 		int main()
 		{
 			Left0 l0;
@@ -77,3 +77,4 @@
 			}
 		}
 
+		*/
