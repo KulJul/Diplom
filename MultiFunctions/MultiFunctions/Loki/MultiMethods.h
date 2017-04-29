@@ -222,30 +222,6 @@ namespace Loki
 		}
 	};
 
-	////////////////////////////////////////////////////////////////////////////////
-	// class template Private::FnDispatcherHelper
-	// Implements trampolines and argument swapping used by FnDispatcher
-	////////////////////////////////////////////////////////////////////////////////
-
-	namespace Private
-	{
-		template <class BaseLhs, class BaseRhs,
-			class SomeLhs, class SomeRhs,
-			typename ResultType,
-			class CastLhs, class CastRhs,
-			ResultType(*Callback)(SomeLhs&, SomeRhs&)>
-			struct FnDispatcherHelper
-		{
-			static ResultType Trampoline(BaseLhs& lhs, BaseRhs& rhs)
-			{
-				return Callback(CastLhs::Cast(lhs), CastRhs::Cast(rhs));
-			}
-			static ResultType TrampolineR(BaseRhs& rhs, BaseLhs& lhs)
-			{
-				return Trampoline(lhs, rhs);
-			}
-		};
-	}
 
 	////////////////////////////////////////////////////////////////////////////////
 	// class template FnDispatcher
@@ -274,15 +250,7 @@ namespace Loki
 			ResultType(*callback)(SomeLhs&, SomeRhs&)>
 			void Add()
 		{
-			typedef Private::FnDispatcherHelper<
-				BaseLhs, BaseRhs,
-				SomeLhs, SomeRhs,
-				ResultType,
-				CastingPolicy<SomeLhs, BaseLhs>,
-				CastingPolicy<SomeRhs, BaseRhs>,
-				callback> Local;
-
-			Add<SomeLhs, SomeRhs>(&Local::Trampoline);
+			Add<SomeLhs, SomeRhs>([](BaseLhs& lhs, BaseRhs& rhs) {return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs)); });
 		}
 
 		template <class SomeLhs, class SomeRhs,
@@ -290,18 +258,10 @@ namespace Loki
 			bool symmetric>
 			void Add()
 		{
-			typedef Private::FnDispatcherHelper<
-				BaseLhs, BaseRhs,
-				SomeLhs, SomeRhs,
-				ResultType,
-				CastingPolicy<SomeLhs, BaseLhs>,
-				CastingPolicy<SomeRhs, BaseRhs>,
-				callback> Local;
-
-			Add<SomeLhs, SomeRhs>(&Local::Trampoline);
+			Add<SomeLhs, SomeRhs>([](BaseLhs& lhs, BaseRhs& rhs) {return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs)); });
 			if (symmetric)
 			{
-				Add<SomeRhs, SomeLhs>(&Local::TrampolineR);
+				Add<SomeLhs, SomeRhs>([](BaseLhs& lhs, BaseRhs& rhs) {return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs)); });
 			}
 		}
 
@@ -390,13 +350,13 @@ namespace Loki
 			if (symmetric)
 			{
 				// Note: symmetry only makes sense where BaseLhs==BaseRhs
-				typedef Private::FunctorDispatcherHelper<
+				using AdapterR = Private::FunctorDispatcherHelper<
 					BaseLhs, BaseLhs,
 					SomeLhs, SomeRhs,
 					ResultType,
 					CastingPolicy<SomeLhs, BaseLhs>,
 					CastingPolicy<SomeRhs, BaseLhs>,
-					Fun, true> AdapterR;
+					Fun, true>;
 
 				backEnd_.Add<SomeRhs, SomeLhs>(FunctorType(AdapterR(fun)));
 			}

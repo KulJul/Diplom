@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp" />
-    <ClCompile Include="DinamicMultimethod.cpp" />
+    <ClCompile Include="FncDispatcher.cpp" />
     <ClCompile Include="FunctorDispatcher.cpp" />
     <ClCompile Include="MyMap.cpp" />
     <ClCompile Include="StaticMultimethod.cpp" />
