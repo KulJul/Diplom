@@ -90,9 +90,10 @@ int main()
 	MyDispatcher dsp;
 
 	try {
-		dsp.Add< Left0, Left0 >(fct1); // (1)
-		dsp.Add< Left1, Left0 >(fct1); // (2)
-		dsp.Add< Left0, Left1 >(fct1); // (3)
+		//теперь так не будем обращаитьс€, это бы требовала кастинга внутри функций нашей бизнес логики
+		//dsp.Add< Left0, Left0 >(fct1); // (1)
+		//dsp.Add< Left1, Left0 >(fct1); // (2)
+		//dsp.Add< Left0, Left1 >(fct1); // (3)
 									   // dsp.Add< Left0, Left1 >( fct2 ); // illegal
 
 		dsp.Add< Left0, Left0, fct1 >(); // (4) == (1) 

@@ -239,29 +239,29 @@ namespace Loki
 		DispatcherBackend<BaseLhs, BaseRhs, ResultType,
 			ResultType(*)(BaseLhs&, BaseRhs&)> backEnd_;
 
-	public:
 		template <class SomeLhs, class SomeRhs>
 		void Add(ResultType(*pFun)(BaseLhs&, BaseRhs&))
 		{
 			return backEnd_.Add<SomeLhs, SomeRhs>(pFun);
 		}
 
-		template <class SomeLhs, class SomeRhs,
-			ResultType(*callback)(SomeLhs&, SomeRhs&)>
-			void Add()
-		{
-			Add<SomeLhs, SomeRhs>([](BaseLhs& lhs, BaseRhs& rhs) {return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs)); });
-		}
+	public:
 
 		template <class SomeLhs, class SomeRhs,
 			ResultType(*callback)(SomeLhs&, SomeRhs&),
-			bool symmetric>
+			bool symmetric = false>
 			void Add()
 		{
-			Add<SomeLhs, SomeRhs>([](BaseLhs& lhs, BaseRhs& rhs) {return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs)); });
+			Add<SomeLhs, SomeRhs>([](BaseLhs& lhs, BaseRhs& rhs)
+			{
+				return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
+			});
 			if (symmetric)
 			{
-				Add<SomeLhs, SomeRhs>([](BaseLhs& lhs, BaseRhs& rhs) {return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs)); });
+				Add<SomeRhs, SomeLhs>([](BaseRhs& rhs, BaseLhs& lhs)
+				{
+					return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
+				});
 			}
 		}
 
