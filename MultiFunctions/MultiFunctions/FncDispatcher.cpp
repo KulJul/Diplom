@@ -80,7 +80,7 @@ void fct2(Left0 & l1, Left1 & l2)
 //
 
 typedef Loki::FnDispatcher< Left0 > MyDispatcher;
-
+/*
 int main()
 {
 	Left0 l0;
@@ -107,4 +107,4 @@ int main()
 	catch (std::runtime_error & e) {
 		std::cout << "Error: " << e.what() << "\n";
 	}
-}
+}*/

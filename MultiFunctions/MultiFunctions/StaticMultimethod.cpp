@@ -11,6 +11,7 @@
 #include "typecollection.h"
 #include "Loki/Typelist.h"
 #include "Loki/SimpleMultiMethod.h"
+#include "Loki/MultiMethods.h"
 
 using namespace std;
 
@@ -48,8 +49,7 @@ public:
 };
 
 
-
-typedef SimpleMultiMethod<MyExec, Left0, TYPELIST_2(Left1, Left2)> MyDispatcher;
+using MyDispatcher = StaticDispatcher2<MyExec, Left0, TYPELIST_2(Left1, Left2)>;
 
 int main()
 {
@@ -60,8 +60,7 @@ int main()
 	MyDispatcher dsp;
 	MyExec exec;
 
-
-	dsp.RunMultiMethodSimple(left1, left1, exec);
-	dsp.RunMultiMethodSimple(left2, left1, exec);
+	dsp.Go(left1, left0, exec);
+	dsp.Go(left2, left1, exec);
 }
 

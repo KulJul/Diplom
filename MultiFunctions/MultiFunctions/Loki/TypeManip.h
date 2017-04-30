@@ -42,8 +42,8 @@ namespace Loki
 
     template <typename T>
     struct Type2Type
-    {   
-        typedef T OriginalType;
+    {
+	    using OriginalType = T;
         Type2Type(){} // VC7
     };
     

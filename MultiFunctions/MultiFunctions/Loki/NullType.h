@@ -9,9 +9,9 @@ namespace Loki
 
     class NullType 
     {
-    public:
-        struct Head { private: Head(); };
-        struct Tail { private: Tail(); };
+		public:
+			struct Head { private: Head(); };
+			struct Tail { private: Tail(); };
     };
 }
 

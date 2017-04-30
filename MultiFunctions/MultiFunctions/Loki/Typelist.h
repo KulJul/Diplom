@@ -614,8 +614,8 @@ typedef char _type_##_is_not_a_Typelist[true]
         template <class TList, class T> 
         struct IndexOf
         {
-            typedef typename TList::Head Head;
-            typedef typename TList::Tail Tail;
+	        using Head = typename TList::Head;
+	        using Tail = typename TList::Tail;
         
         private:
             ASSERT_TYPELIST(TList);
@@ -624,7 +624,7 @@ typedef char _type_##_is_not_a_Typelist[true]
             struct In
             {
             private:
-                typedef typename TList1::Tail Tail;
+	            using Tail = typename TList1::Tail;
 
                 enum { temp = (IndexOf<Tail, T>::value) };
 
