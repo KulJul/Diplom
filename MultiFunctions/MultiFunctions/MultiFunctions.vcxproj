@@ -19,12 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Asteroid.cpp" />
+    <ClCompile Include="Collide.cpp" />
     <ClCompile Include="ContainerMap.cpp" />
     <ClCompile Include="FncDispatcher.cpp" />
     <ClCompile Include="FunctorDispatcher.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="MyMap.cpp" />
+    <ClCompile Include="SpaceShip.cpp" />
+    <ClCompile Include="SpaceStation.cpp" />
     <ClCompile Include="StaticMultimethod.cpp" />
     <ClCompile Include="Temp.cpp" />
+    <ClCompile Include="Сonversation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Caller.h" />
