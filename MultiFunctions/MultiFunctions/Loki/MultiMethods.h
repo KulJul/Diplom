@@ -106,8 +106,7 @@ namespace Loki
 		}
 
 		template <class Head, class Tail>
-		static ResultType DispatchLhs(BaseLhs& lhs, BaseRhs& rhs,
-			Executor exec, Typelist<Head, Tail>)
+		static ResultType DispatchLhs(BaseLhs& lhs, BaseRhs& rhs, Executor exec, Typelist<Head, Tail>)
 		{
 			if (Head* p1 = dynamic_cast<Head*>(&lhs))
 			{
@@ -375,10 +374,5 @@ namespace Loki
 	};
 } // namespace Loki
 
-  ////////////////////////////////////////////////////////////////////////////////
-  // Change log:
-  // June 20, 2001: ported by Nick Thurn to gcc 2.95.3. Kudos, Nick!!!
-  // May  10, 2002: ported by Rani Sharoni to VC7 (RTM - 9466)
-  ////////////////////////////////////////////////////////////////////////////////
 
 #endif

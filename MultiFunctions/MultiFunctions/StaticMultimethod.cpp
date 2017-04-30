@@ -1,7 +1,6 @@
 //http://www.oocities.org/marco_corvi/games/loki/test/
 
 
-#include "Loki/MultiMethods.h"
 #include <iostream>
 #include <vector>
 #include <functional>
@@ -11,7 +10,7 @@
 
 #include "typecollection.h"
 #include "Loki/Typelist.h"
-#include "Loki/MultiMethods.h"
+#include "Loki/SimpleMultiMethod.h"
 
 using namespace std;
 
@@ -50,19 +49,19 @@ public:
 
 
 
-typedef Loki::StaticDispatcher<MyExec, Left0, TYPELIST_2(Left1, Left2)> MyDispatcher;
+typedef SimpleMultiMethod<MyExec, Left0, TYPELIST_2(Left1, Left2)> MyDispatcher;
 
 int main()
 {
-	Left0 l0;
-	Left1 l1;
-	Left2 l2;
+	Left0 left0;
+	Left1 left1;
+	Left2 left2;
 
 	MyDispatcher dsp;
 	MyExec exec;
 
 
-	dsp.Go(l0, l1, exec);
-	dsp.Go(l2, l1, exec);
+	dsp.RunMultiMethodSimple(left1, left1, exec);
+	dsp.RunMultiMethodSimple(left2, left1, exec);
 }
 
