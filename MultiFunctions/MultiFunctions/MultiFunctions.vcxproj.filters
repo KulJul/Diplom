@@ -16,6 +16,21 @@
     <Filter Include="Заголовочные файлы\Loki">
       <UniqueIdentifier>{8a0639c1-fe8f-4950-b684-92b0df4d7f0b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы исходного кода\FncDispatcherExample">
+      <UniqueIdentifier>{630f0fde-ee98-42f7-a2a3-252e82db6528}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\FncDispatcherExample\Relations">
+      <UniqueIdentifier>{25d5b789-4e8f-4a95-902c-cab1e5175dd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\FncDispatcherExample\Objects">
+      <UniqueIdentifier>{1794014d-60bb-4733-82e0-7910faee58a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample">
+      <UniqueIdentifier>{89a03ca2-9a53-4eb1-898c-f1a95c9aaf5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects">
+      <UniqueIdentifier>{32d5d3bb-1d5f-471e-b80f-47e9f013a751}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp">
@@ -30,11 +45,29 @@
     <ClCompile Include="StaticMultimethod.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="DinamicMultimethod.cpp">
-      <Filter>Файлы исходного кода</Filter>
-    </ClCompile>
     <ClCompile Include="FunctorDispatcher.cpp">
       <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="FncDispatcher.cpp">
+      <Filter>Файлы исходного кода\FncDispatcherExample</Filter>
+    </ClCompile>
+    <ClCompile Include="Collide.cpp">
+      <Filter>Файлы исходного кода\FncDispatcherExample\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="Сonversation.cpp">
+      <Filter>Файлы исходного кода\FncDispatcherExample\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Файлы исходного кода\FncDispatcherExample\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="SpaceShip.cpp">
+      <Filter>Файлы исходного кода\FncDispatcherExample\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="SpaceStation.cpp">
+      <Filter>Файлы исходного кода\FncDispatcherExample\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Asteroid.cpp">
+      <Filter>Файлы исходного кода\FncDispatcherExample\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +166,18 @@
     </ClInclude>
     <ClInclude Include="Loki\Visitor.h">
       <Filter>Заголовочные файлы\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Asteroid.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="SpaceShip.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="SpaceStantion.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

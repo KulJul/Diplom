@@ -1,10 +1,8 @@
-struct SpaceStation
-	: GameObject
+#include  "SpaceStantion.h"
+
+
+
+SpaceStation::~SpaceStation()
 {
-
-	double deltaX;
-	double deltaY;
-	double deltaZ;
-
-	~SpaceStation() {}
-};
+	
+}

@@ -33,8 +33,10 @@
     <ClCompile Include="Сonversation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Asteroid.h" />
     <ClInclude Include="Caller.h" />
     <ClInclude Include="ContainerMap.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="game_hierarchy.hpp" />
     <ClInclude Include="Loki\AbstractFactory.h" />
     <ClInclude Include="Loki\AssocVector.h" />
@@ -64,6 +66,8 @@
     <ClInclude Include="Loki\VC_Alignment.h" />
     <ClInclude Include="Loki\Visitor.h" />
     <ClInclude Include="MyMap.h" />
+    <ClInclude Include="SpaceShip.h" />
+    <ClInclude Include="SpaceStantion.h" />
     <ClInclude Include="typecollection.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -77,7 +81,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">

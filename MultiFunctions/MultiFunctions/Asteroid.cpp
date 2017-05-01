@@ -1,7 +1,7 @@
-struct Asteroid
-	: GameObject
-{
-	double diameter;
+#include  "Asteroid.h"
 
-	~Asteroid() {}
-};
+
+Asteroid::~Asteroid()
+{
+	
+}

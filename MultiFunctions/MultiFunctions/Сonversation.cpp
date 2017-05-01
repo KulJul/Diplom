@@ -1,3 +1,7 @@
+#include "Asteroid.h"
+#include "SpaceShip.h"
+#include "SpaceStantion.h"
+
 class Ñonversation
 {
 public:

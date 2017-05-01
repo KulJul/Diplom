@@ -1,9 +1,7 @@
-struct GameObject
+#include  "GameObject.h"
+
+
+GameObject::~GameObject()
 {
-	double x;
-	double y;
-	double z;
-	virtual ~GameObject()
-	{
-	}
-};
+	
+}

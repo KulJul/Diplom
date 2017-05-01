@@ -1,8 +1,8 @@
-struct SpaceShip
-	: GameObject
-{
-	double length;
-	double crossSectional;
+#include  "SpaceShip.h"
 
-	~SpaceShip() {}
-};
+SpaceShip::~SpaceShip()
+{
+	
+}
+
+
