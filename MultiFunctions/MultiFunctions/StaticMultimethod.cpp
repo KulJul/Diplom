@@ -51,16 +51,16 @@ public:
 
 using MyDispatcher = StaticDispatcher2<MyExec, Left0, TYPELIST_2(Left1, Left2)>;
 
-int main()
-{
-	Left0 left0;
-	Left1 left1;
-	Left2 left2;
-
-	MyDispatcher dsp;
-	MyExec exec;
-
-	dsp.Go(left1, left0, exec);
-	dsp.Go(left2, left1, exec);
-}
+//int main()
+//{
+//	Left0 left0;
+//	Left1 left1;
+//	Left2 left2;
+//
+//	MyDispatcher dsp;
+//	MyExec exec;
+//
+//	dsp.Go(left1, left0, exec);
+//	dsp.Go(left2, left1, exec);
+//}
 

@@ -1,23 +1,17 @@
-#include "Asteroid.h"
-#include "SpaceShip.h"
-#include "SpaceStantion.h"
+#include "Conversation.h"
 
-class Ñonversation
+
+void Ñonversation::Talk(Asteroid asteroid, SpaceShip ship)
 {
-public:
 
-	void Talk(Asteroid asteroid, SpaceShip ship)
-	{
+}
 
-	}
+void Ñonversation::Talk(Asteroid asteroid, SpaceStation station)
+{
 
-	void Talk(Asteroid asteroid, SpaceStation station)
-	{
+}
 
-	}
+void Ñonversation::Talk(SpaceShip ship, SpaceStation station)
+{
 
-	void Talk(SpaceShip ship, SpaceStation station)
-	{
-
-	}
-};
+}

@@ -1,23 +1,19 @@
-#include "SpaceShip.h"
-#include "SpaceStantion.h"
-#include "Asteroid.h"
+#include "Collide.h"
 
-class Collide
+
+void Collide::Colliding(Asteroid& asteroid, SpaceShip& ship)
 {
-public:
+	
+}
 
-	void Colliding(Asteroid asteroid, SpaceShip ship)
-	{
-		
-	}
+void Collide::Colliding(Asteroid asteroid, SpaceStation station)
+{
+	
+}
 
-	void Colliding(Asteroid asteroid, SpaceStation station)
-	{
-		
-	}
+void Collide::Colliding(SpaceShip ship, SpaceStation station)
+{
+	
+}
 
-	void Colliding(SpaceShip ship, SpaceStation station)
-	{
 
-	}
-};

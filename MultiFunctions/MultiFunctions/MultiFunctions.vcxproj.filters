@@ -31,6 +31,9 @@
     <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects">
       <UniqueIdentifier>{32d5d3bb-1d5f-471e-b80f-47e9f013a751}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations">
+      <UniqueIdentifier>{da3a0433-b84b-4c9d-9f0b-2cf218a57315}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp">
@@ -178,6 +181,12 @@
     </ClInclude>
     <ClInclude Include="SpaceStantion.h">
       <Filter>Заголовочные файлы\FncDispatcherExample\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Collide.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Relations</Filter>
+    </ClInclude>
+    <ClInclude Include="Conversation.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Relations</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

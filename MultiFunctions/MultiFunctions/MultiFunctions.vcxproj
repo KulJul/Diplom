@@ -35,7 +35,9 @@
   <ItemGroup>
     <ClInclude Include="Asteroid.h" />
     <ClInclude Include="Caller.h" />
+    <ClInclude Include="Collide.h" />
     <ClInclude Include="ContainerMap.h" />
+    <ClInclude Include="Conversation.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="game_hierarchy.hpp" />
     <ClInclude Include="Loki\AbstractFactory.h" />

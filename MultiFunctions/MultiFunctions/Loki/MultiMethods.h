@@ -242,6 +242,24 @@ namespace Loki
 			}
 		}
 
+		template <class SomeLhs, class SomeRhs,
+			bool symmetric = false>
+			void Add(ResultType(*callback)(SomeLhs&, SomeRhs&))
+		{
+			Add<SomeLhs, SomeRhs>([](BaseLhs& lhs, BaseRhs& rhs)
+			{
+				return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
+			});
+			if (symmetric)
+			{
+				Add<SomeRhs, SomeLhs>([](BaseRhs& rhs, BaseLhs& lhs)
+				{
+					return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
+				});
+			}
+		}
+
+
 		template <class SomeLhs, class SomeRhs>
 		void Remove()
 		{

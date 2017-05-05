@@ -1,37 +1,14 @@
-/** sample test for the Loki library
-*
-* @author marco corvi
-* @date dec 2004
-*
-* This code is part of a set of sample test programs for the Loki library.
-*
-* The Loki library is copyright(c) 2001 by Andrei Alexandrescu.
-* It is described in the book:
-*     Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and
-*     Design Patterns Applied". Copyright (c) 2001. Addison-Wesley.
-* and is available from
-*     http://sourceforge.net/projects/loki-lib/
-*
-* Permission to use, copy, modify, distribute and sell this software
-*     (ie, the test programs) for any purpose is hereby granted without fee.
-* Permission to use, copy, modify, distribute and sell the software
-*     changes made to the Loki library is hereby granted without fee
-*     for any purposes provided the original Loki library copyright notice
-*     appears in all copies and that both that notice and this
-*     permission notice appear in supporting documentation.
-* The author makes no representations about the suitability of this
-*     software for any purpose. It is provided "as is" without express
-*     or implied warranty.
-*
-* ===========================================================
-* This sample program show the usage of the function
-* dispatcher (see pg. 281)
-*
-*/
 
 #include "Loki/MultiMethods.h"
 #include <iostream>
 #include "Loki/MultiMethods.h"
+
+#include "GameObject.h"
+#include "Asteroid.h"
+#include "SpaceShip.h"
+#include "SpaceStantion.h"
+#include "Collide.h"
+#include "Conversation.h"
 
 
 // =====================================================
@@ -90,41 +67,58 @@ void fct3(Left1 & l1, Left2 & l2)
 //      ReturnType (*)( BaseLhs &, BaseRhs &)
 //
 
-typedef Loki::FnDispatcher< Left0 > MyDispatcher;
-/*
+typedef Loki::FnDispatcher<GameObject> MyDispatcher;
+
 int main()
 {
-	Left0 l0;
-	l0.left0Member = 5;
+	std::vector<GameObject> gameObjectCollection;
+
+	auto asteroid1 = new Asteroid();
+	auto asteroid2 = new Asteroid();
+	gameObjectCollection.push_back(*asteroid1);
+	gameObjectCollection.push_back(*asteroid2);
+
+	auto spaceShip1 = new SpaceShip();
+	auto spaceShip2 = new SpaceShip();
+	gameObjectCollection.push_back(*spaceShip1);
+	gameObjectCollection.push_back(*spaceShip2);
+
+	auto spaceStation1 = new SpaceStation();
+	auto spaceStation2 = new SpaceStation();
+	gameObjectCollection.push_back(*spaceStation1);
+	gameObjectCollection.push_back(*spaceStation2);
 
 
-	Left1 l1;
-	l1.left0Member = 7;
-	l1.left1Member = 10;
-	
+	auto collideRelationship = new Collide();
+	auto conversationRelationship = new Сonversation();
 
-	Left2 l2;
-	l2.left0Member = 13;
-	l2.left2Member = 15;
 
-	MyDispatcher dsp;
+	Loki::FnDispatcher<GameObject> dispatcher;
 
 	try {
-		//теперь так не будем обращаиться, это бы требовала кастинга внутри функций нашей бизнес логики
-		//dsp.Add< Left0, Left0 >(fct1); // (1)
-		//dsp.Add< Left1, Left0 >(fct1); // (2)
-		//dsp.Add< Left0, Left1 >(fct1); // (3)
-									   // dsp.Add< Left0, Left1 >( fct2 ); // illegal
 
-		dsp.Add< Left0, Left0, fct1 >(); // (4) == (1) 
-		dsp.Add< Left0, Left1, fct2 >(); // (5) replace (2)
-		dsp.Add<Left1, Left2, fct3, true>();
+		//dispatcher.Add<Asteroid, SpaceShip, true >([collideRelationship](Asteroid& ast, SpaceShip& spsh) {return collideRelationship->Colliding(ast, spsh);});
 
-		dsp.Go(l0, l0); // use (4)
-		dsp.Go(l0, l1); // use (5)
+		//dispatcher.Go(asteroid1, spaceShip1);
 
-		dsp.Go(l1, l2);
-		dsp.Go(l2, l1);
+
+
+
+		////теперь так не будем обращаиться, это бы требовала кастинга внутри функций нашей бизнес логики
+		////dsp.Add< Left0, Left0 >(fct1); // (1)
+		////dsp.Add< Left1, Left0 >(fct1); // (2)
+		////dsp.Add< Left0, Left1 >(fct1); // (3)
+		//// dsp.Add< Left0, Left1 >( fct2 ); // illegal
+
+		//dsp.Add< Left0, Left0, fct1 >(); // (4) == (1) 
+		//dsp.Add< Left0, Left1, fct2 >(); // (5) replace (2)
+		//dsp.Add<Left1, Left2, fct3, true>();
+
+		//dsp.Go(l0, l0); // use (4)
+		//dsp.Go(l0, l1); // use (5)
+
+		//dsp.Go(l1, l2);
+		//dsp.Go(l2, l1);
 
 
 
@@ -132,4 +126,7 @@ int main()
 	catch (std::runtime_error & e) {
 		std::cout << "Error: " << e.what() << "\n";
 	}
-}*/
+
+
+
+}
