@@ -73,12 +73,12 @@ int main()
 {
 	std::vector<GameObject> gameObjectCollection;
 
-	auto asteroid1 = new Asteroid();
+	GameObject* asteroid1 = new Asteroid();
 	auto asteroid2 = new Asteroid();
 	gameObjectCollection.push_back(*asteroid1);
 	gameObjectCollection.push_back(*asteroid2);
 
-	auto spaceShip1 = new SpaceShip();
+	GameObject* spaceShip1 = new SpaceShip();
 	auto spaceShip2 = new SpaceShip();
 	gameObjectCollection.push_back(*spaceShip1);
 	gameObjectCollection.push_back(*spaceShip2);
@@ -97,9 +97,12 @@ int main()
 
 	try {
 
-		//dispatcher.Add<Asteroid, SpaceShip, true >([collideRelationship](Asteroid& ast, SpaceShip& spsh) {return collideRelationship->Colliding(ast, spsh);});
+		dispatcher.Add<Asteroid, SpaceShip, true >([collideRelationship](Asteroid& ast, SpaceShip& spsh) 
+			{
+			return collideRelationship->Colliding(ast, spsh);
+			});
 
-		//dispatcher.Go(asteroid1, spaceShip1);
+		dispatcher.Go(*asteroid1, *spaceShip1);
 
 
 
