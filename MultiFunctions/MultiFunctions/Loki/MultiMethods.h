@@ -230,13 +230,13 @@ namespace Loki
 			bool symmetric = false>
 			void Add(std::function<ResultType(SomeLhs&, SomeRhs&)> callback)
 		{
-			AddToBackDisp<SomeLhs, SomeRhs>([&](BaseLhs& lhs, BaseRhs& rhs)
+			AddToBackDisp<SomeLhs, SomeRhs>([=](BaseLhs& lhs, BaseRhs& rhs)
 			{
 				return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
 			});
 			if (symmetric)
 			{
-				AddToBackDisp<SomeRhs, SomeLhs>([&](BaseRhs& rhs, BaseLhs& lhs)
+				AddToBackDisp<SomeRhs, SomeLhs>([=](BaseRhs& rhs, BaseLhs& lhs)
 				{
 					return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
 				});
