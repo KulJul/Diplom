@@ -256,6 +256,95 @@ namespace Loki
 		}
 	};
 
+
+	////////////////////////////////////////////////////////////////////////////////
+	// class template MultiBasicDispatcher
+	// Implements a logarithmic multi dispatcher for functors (or functions)
+	// Doesn't offer automated casts or symmetry
+	////////////////////////////////////////////////////////////////////////////////
+
+	template<class BaseType, class ResultType = void, class CallbackType>
+		class MultiBasicDispatcher
+	{
+
+		AssocVector<std::string, CallbackType> callbackMap_;
+
+	public:
+		template <class... SomeTypes>
+		void Add(CallbackType fun)
+		{
+			std::string key = "";
+			callbackMap_[key] = fun;
+		}
+
+
+		ResultType Go(BaseType& args...);
+	};
+
+
+	template <class BaseType, class ResultType = void, class CallbackType>
+		ResultType MultiBasicDispatcher<BaseType, ResultType, CallbackType>
+		::Go(BaseType& args...)
+	{
+		typename MapType::key_type k(typeid(lhs), typeid(rhs));
+		typename MapType::iterator i = callbackMap_.find(k);
+		if (i == callbackMap_.end())
+		{
+			throw std::runtime_error("Function not found");
+		}
+		return (i->second)(lhs, rhs);
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	// class template FnMultiDispatcher
+	// Implements an automatic logarithmic multi dispatcher for functions
+	// Features automated conversions
+	////////////////////////////////////////////////////////////////////////////////
+	template <class BaseType,
+		typename ResultType = void,
+		template <class, class> class CastingPolicy = DynamicCaster,
+		template <class, class, class, class>
+	class DispatcherBackend = MultiBasicDispatcher>
+		class MultiFnDispatcher
+	{
+		DispatcherBackend<BaseType, ResultType,
+			std::function<ResultType(BaseType&...)>> backEnd_;
+
+
+		template <class... SomeTypes>
+		void AddToBackDisp(std::function<ResultType(SomeTypes&...)> pFun)
+		{
+			return backEnd_.Add<SomeTypes>(pFun);
+		}
+
+	public:
+
+
+		template <class... SomeTypes, bool symmetric = false>
+			void Add(std::function<ResultType(SomeTypes&...)> callback)
+		{
+			AddToBackDisp<SomeTypes>([=](SomeTypes&...args)
+			{
+
+				//for (SomeTypes element : args)
+				//{
+				//	auto btElement = CastingPolicy<SomeTypes, BaseType>::Cast(element);
+				//}
+
+				//static_cast<>(args[0])
+
+				return callback(CastingPolicy<SomeTypes, BaseType>::Cast(args));
+			});
+		}
+
+		ResultType Go(BaseType& args...)
+		{
+			return backEnd_.Go(args);
+		}
+	};
+
+
+
 	////////////////////////////////////////////////////////////////////////////////
 	// class template FunctorDispatcherAdaptor
 	// permits use of FunctorDispatcher under gcc.2.95.2/3

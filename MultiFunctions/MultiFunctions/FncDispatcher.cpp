@@ -83,7 +83,7 @@ int main()
 	gameObjectCollection.push_back(*spaceShip1);
 	gameObjectCollection.push_back(*spaceShip2);
 
-	auto spaceStation1 = new SpaceStation();
+	GameObject* spaceStation1 = new SpaceStation();
 	auto spaceStation2 = new SpaceStation();
 	gameObjectCollection.push_back(*spaceStation1);
 	gameObjectCollection.push_back(*spaceStation2);
@@ -94,6 +94,7 @@ int main()
 
 
 	Loki::FnDispatcher<GameObject> dispatcher;
+	Loki::MultiFnDispatcher<GameObject> multiDispatcher;
 
 	try {
 
@@ -104,6 +105,12 @@ int main()
 
 		dispatcher.Go(*asteroid1, *spaceShip1);
 
+		multiDispatcher.Add<Asteroid, SpaceShip, SpaceStation, true>([collideRelationship](Asteroid& ast, SpaceShip& spsh, SpaceStation& spst)
+			{
+			return collideRelationship->Colliding(ast, spsh, spst);
+			});
+
+		multiDispatcher.Go(*asteroid1, *spaceShip1, *spaceStation1);
 
 
 
@@ -111,7 +118,7 @@ int main()
 		////dsp.Add< Left0, Left0 >(fct1); // (1)
 		////dsp.Add< Left1, Left0 >(fct1); // (2)
 		////dsp.Add< Left0, Left1 >(fct1); // (3)
-		//// dsp.Add< Left0, Left1 >( fct2 ); // illegal
+		// ;/// dsp.Add< Left0, Left1 >( fct2 ); // illegal
 
 		//dsp.Add< Left0, Left0, fct1 >(); // (4) == (1) 
 		//dsp.Add< Left0, Left1, fct2 >(); // (5) replace (2)

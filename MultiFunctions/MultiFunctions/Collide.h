@@ -13,4 +13,6 @@ public:
 	void Colliding(Asteroid asteroid, SpaceStation station);
 
 	void Colliding(SpaceShip ship, SpaceStation station);
+
+	void Colliding(Asteroid& asteroid, SpaceShip& space_ship, SpaceStation& space_station);
 };
