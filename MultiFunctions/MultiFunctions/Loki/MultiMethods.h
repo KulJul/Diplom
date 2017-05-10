@@ -5,6 +5,8 @@
 #include "LokiTypeInfo.h"
 #include "Functor.h"
 #include "AssocVector.h"
+#include <cstdarg>
+#include <string>
 
 
 namespace Loki
@@ -285,15 +287,27 @@ namespace Loki
 	template <class BaseType, class ResultType = void, class CallbackType>
 		ResultType MultiBasicDispatcher<BaseType, ResultType, CallbackType>
 		::Go(BaseType& args...)
-	{
-		typename MapType::key_type k(typeid(lhs), typeid(rhs));
-		typename MapType::iterator i = callbackMap_.find(k);
-		if (i == callbackMap_.end())
 		{
-			throw std::runtime_error("Function not found");
+			std::string key = "";
+
+			va_list ap;
+			int j;
+			double tot = 0;
+			va_start(ap, args); //Requires the last fixed parameter (to get the address)
+			for (j = 0; j < args; j++)
+			{
+				key += std::to_string(typeid(va_arg(ap, BaseType)).hash_code()); //Requires the type to cast to. Increments ap to the next argument.
+
+			}		
+			va_end(ap);
+
+			auto i = callbackMap_.find(key);
+			if (i == callbackMap_.end())
+			{
+				throw std::runtime_error("Function not found");
+			}
+			return (i->second)(args);
 		}
-		return (i->second)(lhs, rhs);
-	}
 
 	////////////////////////////////////////////////////////////////////////////////
 	// class template FnMultiDispatcher
