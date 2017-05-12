@@ -105,6 +105,14 @@ int main()
 
 		dispatcher.Go(*asteroid1, *spaceShip1);
 
+		TYPELIST_3(Asteroid, SpaceShip, SpaceStation) types;
+
+		
+
+
+
+
+
 		multiDispatcher.Add<Asteroid, SpaceShip, SpaceStation, true>
 		([collideRelationship](Asteroid& ast, SpaceShip& spsh, SpaceStation& spst)
 			{

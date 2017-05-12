@@ -328,9 +328,11 @@ namespace Loki
 		{
 
 				type_info type = (*argumentsTypes)[0];
-				auto g = dynamic_cast<type>(keyVector);
+				TypeInfo f;
+				auto g = dynamic_cast<f>(keyVector);
 
-			TypeInfo
+				
+			
 
 			AddToBackDisp<SomeTypes>([=](SomeTypes&...args)
 			{
