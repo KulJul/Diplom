@@ -105,12 +105,13 @@ int main()
 
 		dispatcher.Go(*asteroid1, *spaceShip1);
 
-		multiDispatcher.Add<Asteroid, SpaceShip, SpaceStation, true>([collideRelationship](Asteroid& ast, SpaceShip& spsh, SpaceStation& spst)
+		multiDispatcher.Add<Asteroid, SpaceShip, SpaceStation, true>
+		([collideRelationship](Asteroid& ast, SpaceShip& spsh, SpaceStation& spst)
 			{
 			return collideRelationship->Colliding(ast, spsh, spst);
 			});
 
-		multiDispatcher.Go(*asteroid1, *spaceShip1, *spaceStation1);
+		multiDispatcher.Go({ *asteroid1, *spaceShip1, *spaceStation1 });
 
 
 
