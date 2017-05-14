@@ -7,6 +7,7 @@
 #include "AssocVector.h"
 #include <cstdarg>
 #include <string>
+#include "TypeCollection.h"
 
 
 namespace Loki
@@ -323,13 +324,56 @@ namespace Loki
 
 	public:
 
-			void Add(std::function<ResultType(std::vector<BaseType&>& args)> callback,
-				std::vector<type_info>& argumentsTypes)
+		template<class TList>
+		void Add(...)
 		{
+			va_list ap;
+			va_start(ap, Length<TList>::value);
+			for (int i = 0; i <= Length<TList>::value; i++)
+			{
+				TList::Head typetArg = va_arg(ap, TList::Head);
+			}
+			va_end(ap);
 
-				type_info type = (*argumentsTypes)[0];
-				TypeInfo f;
-				auto g = dynamic_cast<f>(keyVector);
+
+
+		}
+
+
+
+
+
+				
+
+			Add<TList::Head>([=](std::vector<BaseType&>& args)
+					{
+						
+						return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs),
+							CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
+					}
+				);
+
+	
+			//va_list ap;
+			//int j;
+			//double tot = 0;
+			//va_start(ap, args); //Requires the last fixed parameter (to get the address)
+			//for (j = 0; j < args; j++)
+			//	for (auto arg : args)
+			//	{
+			//		key += std::to_string(typeid(va_arg(ap, BaseType)).hash_code()); //Requires the type to cast to. Increments ap to the next argument.
+
+			//	}
+			//va_end(ap);
+			//key += std::to_string(typeid(arg).hash_code());
+			//}
+
+
+
+
+			type_info type = (*argumentsTypes)[0];
+			TypeInfo f;
+			auto g = dynamic_cast<f>(keyVector);
 
 				
 			
@@ -347,6 +391,9 @@ namespace Loki
 				return callback(CastingPolicy<SomeTypes, BaseType>::Cast(args));
 			});
 		}
+
+		
+
 
 			template <class... DerivedTpes>
 		ResultType Go(const std::vector<BaseType&>& args)

@@ -9,6 +9,7 @@
 #include "SpaceStantion.h"
 #include "Collide.h"
 #include "Conversation.h"
+#include "TypeCollection.h"
 
 
 // =====================================================
@@ -108,7 +109,7 @@ int main()
 		TYPELIST_3(Asteroid, SpaceShip, SpaceStation) types;
 
 		
-
+		<TypeCollectionMake<Asteroid, SpaceShip, SpaceStation>::Collection>
 
 
 

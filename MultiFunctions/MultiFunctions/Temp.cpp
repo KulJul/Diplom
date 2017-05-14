@@ -185,11 +185,12 @@ int main() {
 	size_t asteroidRefHCD = typeid(asteroidGameRef).hash_code();
 	size_t shipRefHCH = typeid(shipGameRef).hash_code();
 
-		
+	
+*/
 	MyMap<asteroid, space_ship>::addHandler(MyClass::collide_as_sh);
 
-	Caller::INit<TypeCollectionMake<asteroid, space_ship>::Collection>();
+	Caller::INit<TypeCollectionMake<asteroid, space_ship>>();
 
 	Caller::Call<game_object, TypeCollectionMake<asteroid, space_ship>::Collection>(asteroidGameObj, shipGameObj);
 	
-}*/
+}
