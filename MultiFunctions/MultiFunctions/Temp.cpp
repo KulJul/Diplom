@@ -187,10 +187,10 @@ int main() {
 
 	
 */
-	MyMap<asteroid, space_ship>::addHandler(MyClass::collide_as_sh);
+	//MyMap<asteroid, space_ship>::addHandler(MyClass::collide_as_sh);
 
-	Caller::INit<TypeCollectionMake<asteroid, space_ship>>();
+	//Caller::INit<TypeCollectionMake<asteroid, space_ship>>();
 
-	Caller::Call<game_object, TypeCollectionMake<asteroid, space_ship>::Collection>(asteroidGameObj, shipGameObj);
+	//Caller::Call<game_object, TypeCollectionMake<asteroid, space_ship>::Collection>(asteroidGameObj, shipGameObj);
 	
-}
+//}

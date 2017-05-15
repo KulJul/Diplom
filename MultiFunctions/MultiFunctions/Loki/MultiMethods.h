@@ -266,43 +266,43 @@ namespace Loki
 	// Doesn't offer automated casts or symmetry
 	////////////////////////////////////////////////////////////////////////////////
 
-	template<class BaseType, class ResultType = void, class CallbackType>
-		class MultiBasicDispatcher
-	{
+	//template<class BaseType, class ResultType = void, class CallbackType>
+	//	class MultiBasicDispatcher
+	//{
 
-		AssocVector<std::string, CallbackType> callbackMap_;
+	//	AssocVector<std::string, CallbackType> callbackMap_;
 
-	public:
-		template <class... SomeTypes>
-		void Add(CallbackType fun)
-		{
-			std::string key = "";
-			callbackMap_[key] = fun;
-		}
-
-
-		ResultType Go(const std::vector<BaseType&>& args);
-	};
+	//public:
+	//	template <class... SomeTypes>
+	//	void Add(CallbackType fun)
+	//	{
+	//		std::string key = "";
+	//		callbackMap_[key] = fun;
+	//	}
 
 
-	template <class BaseType, class ResultType = void, class CallbackType>
-		ResultType MultiBasicDispatcher<BaseType, ResultType, CallbackType>
-		::Go(const std::vector<BaseType&>& args)
-		{
-			std::string key = "";
+	//	ResultType Go(const std::vector<BaseType&>& args);
+	//};
 
-			for (auto arg : args)
-			{
-				key += std::to_string(typeid(arg).hash_code());
-			}
 
-			auto i = callbackMap_.find(key);
-			if (i == callbackMap_.end())
-			{
-				throw std::runtime_error("Function not found");
-			}
-			return (i->second)(args);
-		}
+	//template <class BaseType, class ResultType = void, class CallbackType>
+	//	ResultType MultiBasicDispatcher<BaseType, ResultType, CallbackType>
+	//	::Go(const std::vector<BaseType&>& args)
+	//	{
+	//		std::string key = "";
+
+	//		for (auto arg : args)
+	//		{
+	//			key += std::to_string(typeid(arg).hash_code());
+	//		}
+
+	//		auto i = callbackMap_.find(key);
+	//		if (i == callbackMap_.end())
+	//		{
+	//			throw std::runtime_error("Function not found");
+	//		}
+	//		return (i->second)(args);
+	//	}
 
 	////////////////////////////////////////////////////////////////////////////////
 	// class template FnMultiDispatcher
@@ -311,121 +311,119 @@ namespace Loki
 	////////////////////////////////////////////////////////////////////////////////
 	template <class BaseType,
 		typename ResultType = void,
-		template <class, class> class CastingPolicy = DynamicCaster,
-		template <class, class, class, class>
-	class DispatcherBackend = MultiBasicDispatcher>
+		template <class, class> class CastingPolicy = DynamicCaster>
+	//	template <class, class, class, class>
+	//class DispatcherBackend = MultiBasicDispatcher>
 		class MultiFnDispatcher
 	{
 
 		AssocVector<std::vector<type_info>&, std::function<ResultType(BaseType&...)>> callbackMap_;
 
-		template <class... SomeTypes>
-			void AddToBackDisp(std::function<ResultType(SomeTypes&...)> pFun);
+		//template <class... SomeTypes>
+		//	void AddToBackDisp(std::function<ResultType(SomeTypes&...)> pFun);
 
 	public:
-
-		template<class TList>
-		void Add(...)
+		template<class... A>
+		void Add(A... args)
 		{
 			va_list ap;
-			va_start(ap, Length<TList>::value);
-			for (int i = 0; i <= Length<TList>::value; i++)
+			int countArgs = sizeof...(A);
+			va_start(ap, countArgs);
+			for (int i = 0; i <= countArgs; i++)
 			{
-				TList::Head typetArg = va_arg(ap, TList::Head);
+				A typetArg = va_arg(ap, A);
 			}
 			va_end(ap);
 
-
-
 		}
 
 
 
 
 
-				
+		//		
 
-			Add<TList::Head>([=](std::vector<BaseType&>& args)
-					{
-						
-						return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs),
-							CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
-					}
-				);
+		//	Add<TList::Head>([=](std::vector<BaseType&>& args)
+		//			{
+		//				
+		//				return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs),
+		//					CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
+		//			}
+		//		);
 
 	
-			//va_list ap;
-			//int j;
-			//double tot = 0;
-			//va_start(ap, args); //Requires the last fixed parameter (to get the address)
-			//for (j = 0; j < args; j++)
-			//	for (auto arg : args)
-			//	{
-			//		key += std::to_string(typeid(va_arg(ap, BaseType)).hash_code()); //Requires the type to cast to. Increments ap to the next argument.
+		//	//va_list ap;
+		//	//int j;
+		//	//double tot = 0;
+		//	//va_start(ap, args); //Requires the last fixed parameter (to get the address)
+		//	//for (j = 0; j < args; j++)
+		//	//	for (auto arg : args)
+		//	//	{
+		//	//		key += std::to_string(typeid(va_arg(ap, BaseType)).hash_code()); //Requires the type to cast to. Increments ap to the next argument.
 
-			//	}
-			//va_end(ap);
-			//key += std::to_string(typeid(arg).hash_code());
-			//}
-
-
-
-
-			type_info type = (*argumentsTypes)[0];
-			TypeInfo f;
-			auto g = dynamic_cast<f>(keyVector);
-
-				
-			
-
-			AddToBackDisp<SomeTypes>([=](SomeTypes&...args)
-			{
-
-				//for (SomeTypes element : args)
-				//{
-				//	auto btElement = CastingPolicy<SomeTypes, BaseType>::Cast(element);
-				//}
-
-				//static_cast<>(args[0])
-
-				return callback(CastingPolicy<SomeTypes, BaseType>::Cast(args));
-			});
-		}
-
-		
-
-
-			template <class... DerivedTpes>
-		ResultType Go(const std::vector<BaseType&>& args)
-		{
-
-			std::vector<type_info>& keyVector = new std::vector<type_info>();
-
-			type_info type = (*args)[0];
-			auto g = dynamic_cast<type>(keyVector);
+		//	//	}
+		//	//va_end(ap);
+		//	//key += std::to_string(typeid(arg).hash_code());
+		//	//}
 
 
 
-			for (auto arg : args)
-			{
-				keyVector.push_back(typeid(arg));
-			}
+
+		//	type_info type = (*argumentsTypes)[0];
+		//	TypeInfo f;
+		//	auto g = dynamic_cast<f>(keyVector);
+
+		//		
+		//	
+
+		//	AddToBackDisp<SomeTypes>([=](SomeTypes&...args)
+		//	{
+
+		//		//for (SomeTypes element : args)
+		//		//{
+		//		//	auto btElement = CastingPolicy<SomeTypes, BaseType>::Cast(element);
+		//		//}
+
+		//		//static_cast<>(args[0])
+
+		//		return callback(CastingPolicy<SomeTypes, BaseType>::Cast(args));
+		//	});
+		//}
+
+		//
+
+
+		//	template <class... DerivedTpes>
+		//ResultType Go(const std::vector<BaseType&>& args)
+		//{
+
+		//	std::vector<type_info>& keyVector = new std::vector<type_info>();
+
+		//	type_info type = (*args)[0];
+		//	auto g = dynamic_cast<type>(keyVector);
+
+
+
+		//	for (auto arg : args)
+		//	{
+		//		keyVector.push_back(typeid(arg));
+		//	}
 	
-			auto i = callbackMap_.find(keyVector);
-			if (i == callbackMap_.end())
-			{
-				throw std::runtime_error("Function not found");
-			}
-			return (i->second)(args);
-		}
+		//	auto i = callbackMap_.find(keyVector);
+		//	if (i == callbackMap_.end())
+		//	{
+		//		throw std::runtime_error("Function not found");
+		//	}
+		//	return (i->second)(args);
+		//}
 	};
 
-	template <class BaseType, typename ResultType, template <class, class> class CastingPolicy, template <class, class, class, class> class DispatcherBackend>
-	template <class ... SomeTypes>
-	void MultiFnDispatcher<BaseType, ResultType, CastingPolicy, DispatcherBackend>::AddToBackDisp(std::function<ResultType(SomeTypes&...)> pFun)
-	{
-		return backEnd_.Add<SomeTypes>(pFun);
-	}
+	//template <class BaseType, typename ResultType, template <class, class> class CastingPolicy, template <class, class, class, class> class DispatcherBackend>
+	//template <class ... SomeTypes>
+	//void MultiFnDispatcher<BaseType, ResultType, CastingPolicy, DispatcherBackend>::AddToBackDisp(std::function<ResultType(SomeTypes&...)> pFun)
+	//{
+	//	return backEnd_.Add<SomeTypes>(pFun);
+	//}
 
 
 	////////////////////////////////////////////////////////////////////////////////

@@ -106,22 +106,25 @@ int main()
 
 		dispatcher.Go(*asteroid1, *spaceShip1);
 
-		TYPELIST_3(Asteroid, SpaceShip, SpaceStation) types;
+		//TYPELIST_3(Asteroid, SpaceShip, SpaceStation) types;
 
-		
-		<TypeCollectionMake<Asteroid, SpaceShip, SpaceStation>::Collection>
-
-
+		//
+		//<TypeCollectionMake<Asteroid, SpaceShip, SpaceStation>::Collection>
 
 
-		multiDispatcher.Add<Asteroid, SpaceShip, SpaceStation, true>
-		([collideRelationship](Asteroid& ast, SpaceShip& spsh, SpaceStation& spst)
-			{
-			return collideRelationship->Colliding(ast, spsh, spst);
-			});
 
-		multiDispatcher.Go({ *asteroid1, *spaceShip1, *spaceStation1 });
 
+		//multiDispatcher.Add<Asteroid, SpaceShip, SpaceStation, true>
+		//([collideRelationship](Asteroid& ast, SpaceShip& spsh, SpaceStation& spst)
+		//	{
+		//	return collideRelationship->Colliding(ast, spsh, spst);
+		//	});
+
+		//multiDispatcher.Go({ *asteroid1, *spaceShip1, *spaceStation1 });
+
+
+
+		multiDispatcher.Add<Asteroid*, SpaceShip*, SpaceStation*>(asteroid2, spaceShip2, spaceStation2);
 
 
 		////теперь так не будем обращаитьс€, это бы требовала кастинга внутри функций нашей бизнес логики
