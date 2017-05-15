@@ -5,6 +5,7 @@
 #include "LokiTypeInfo.h"
 #include "Functor.h"
 #include "AssocVector.h"
+#include <cstdarg>
 
 
 namespace Loki
@@ -255,6 +256,43 @@ namespace Loki
 			return backEnd_.Go(lhs, rhs);
 		}
 	};
+
+
+	//////////////////////////////////////////////////////////
+	template <class BaseType,
+		typename ResultType = void,
+		template <class, class> class CastingPolicy = DynamicCaster>
+	class MultiFnDispatcher
+	{
+
+		//AssocVector<std::vector<type_info>&, std::function<ResultType(BaseType&...)>> callbackMap_;
+
+		//template <class... SomeTypes>
+		//	void AddToBackDisp(std::function<ResultType(SomeTypes&...)> pFun);
+
+	public:
+		template<class... A>
+		void Add(A... args)
+		{
+			//va_list ap;
+			//auto countArgs = sizeof...(A);
+			//va_start(ap, countArgs);
+			//for (unsigned i = 0; i <= countArgs; i++)
+			//{
+			//	BaseType typetArg = va_arg(ap, BaseType);
+			//	A concretTypedArg = dynamic_cast<A>(typetArg);
+			//}
+			//va_end(ap);
+
+
+			typedef int[] for_eh;
+			for_eh{ ((void)(loop_body(std::forward<A>(args))),0)...,0 };
+
+		}
+	};
+
+
+
 
 	////////////////////////////////////////////////////////////////////////////////
 	// class template FunctorDispatcherAdaptor

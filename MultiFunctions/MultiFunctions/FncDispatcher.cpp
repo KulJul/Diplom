@@ -94,6 +94,7 @@ int main()
 
 
 	Loki::FnDispatcher<GameObject> dispatcher;
+	Loki::MultiFnDispatcher<GameObject> multiDispatcher;
 
 	try {
 
@@ -104,7 +105,7 @@ int main()
 
 		dispatcher.Go(*asteroid1, *spaceShip1);
 
-
+		multiDispatcher.Add<Asteroid*, SpaceShip*, SpaceStation*>(asteroid2, spaceShip2, spaceStation2);
 
 
 		////теперь так не будем обращаитьс€, это бы требовала кастинга внутри функций нашей бизнес логики
