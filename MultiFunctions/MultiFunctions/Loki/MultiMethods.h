@@ -1,3 +1,20 @@
+////////////////////////////////////////////////////////////////////////////////
+// The Loki Library
+// Copyright (c) 2001 by Andrei Alexandrescu
+// This code accompanies the book:
+// Alexandrescu, Andrei. "Modern C++ Design: Generic Programming and Design 
+//     Patterns Applied". Copyright (c) 2001. Addison-Wesley.
+// Permission to use, copy, modify, distribute and sell this software for any 
+//     purpose is hereby granted without fee, provided that the above copyright 
+//     notice appear in all copies and that both that copyright notice and this 
+//     permission notice appear in supporting documentation.
+// The author or Addison-Welsey Longman make no representations about the 
+//     suitability of this software for any purpose. It is provided "as is" 
+//     without express or implied warranty.
+////////////////////////////////////////////////////////////////////////////////
+
+// Last update: May 19, 2002
+
 #ifndef MULTIMETHODS_INC_
 #define MULTIMETHODS_INC_
 
@@ -5,9 +22,12 @@
 #include "LokiTypeInfo.h"
 #include "Functor.h"
 #include "AssocVector.h"
-#include "Typelist.h"
-#include <string>
 
+////////////////////////////////////////////////////////////////////////////////
+// IMPORTANT NOTE:
+// The double dispatchers implemented below differ from the excerpts shown in
+// the book - they are simpler while respecting the same interface.
+////////////////////////////////////////////////////////////////////////////////
 
 namespace Loki
 {
@@ -86,7 +106,8 @@ namespace Loki
 		}
 
 		template <class Head, class Tail>
-		static ResultType DispatchLhs(BaseLhs& lhs, BaseRhs& rhs, Executor exec, Typelist<Head, Tail>)
+		static ResultType DispatchLhs(BaseLhs& lhs, BaseRhs& rhs,
+			Executor exec, Typelist<Head, Tail>)
 		{
 			if (Head* p1 = dynamic_cast<Head*>(&lhs))
 			{
@@ -201,6 +222,30 @@ namespace Loki
 		}
 	};
 
+	////////////////////////////////////////////////////////////////////////////////
+	// class template Private::FnDispatcherHelper
+	// Implements trampolines and argument swapping used by FnDispatcher
+	////////////////////////////////////////////////////////////////////////////////
+
+	namespace Private
+	{
+		template <class BaseLhs, class BaseRhs,
+			class SomeLhs, class SomeRhs,
+			typename ResultType,
+			class CastLhs, class CastRhs,
+			ResultType(*Callback)(SomeLhs&, SomeRhs&)>
+			struct FnDispatcherHelper
+		{
+			static ResultType Trampoline(BaseLhs& lhs, BaseRhs& rhs)
+			{
+				return Callback(CastLhs::Cast(lhs), CastRhs::Cast(rhs));
+			}
+			static ResultType TrampolineR(BaseRhs& rhs, BaseLhs& lhs)
+			{
+				return Trampoline(lhs, rhs);
+			}
+		};
+	}
 
 	////////////////////////////////////////////////////////////////////////////////
 	// class template FnDispatcher
@@ -216,35 +261,49 @@ namespace Loki
 		class FnDispatcher
 	{
 		DispatcherBackend<BaseLhs, BaseRhs, ResultType,
-			std::function<ResultType(BaseLhs&, BaseRhs&)>> backEnd_;
+			ResultType(*)(BaseLhs&, BaseRhs&)> backEnd_;
 
-
+	public:
 		template <class SomeLhs, class SomeRhs>
-		void AddToBackDisp(std::function<ResultType(BaseLhs&, BaseRhs&)> pFun)
+		void Add(ResultType(*pFun)(BaseLhs&, BaseRhs&))
 		{
 			return backEnd_.Add<SomeLhs, SomeRhs>(pFun);
 		}
 
-	public:
-
-
 		template <class SomeLhs, class SomeRhs,
-			bool symmetric = false>
-			void Add(std::function<ResultType(SomeLhs&, SomeRhs&)> callback)
+			ResultType(*callback)(SomeLhs&, SomeRhs&)>
+			void Add()
 		{
-			AddToBackDisp<SomeLhs, SomeRhs>([=](BaseLhs& lhs, BaseRhs& rhs)
-			{
-				return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
-			});
-			if (symmetric)
-			{
-				AddToBackDisp<SomeRhs, SomeLhs>([=](BaseRhs& rhs, BaseLhs& lhs)
-				{
-					return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
-				});
-			}
+			typedef Private::FnDispatcherHelper<
+				BaseLhs, BaseRhs,
+				SomeLhs, SomeRhs,
+				ResultType,
+				CastingPolicy<SomeLhs, BaseLhs>,
+				CastingPolicy<SomeRhs, BaseRhs>,
+				callback> Local;
+
+			Add<SomeLhs, SomeRhs>(&Local::Trampoline);
 		}
 
+		template <class SomeLhs, class SomeRhs,
+			ResultType(*callback)(SomeLhs&, SomeRhs&),
+			bool symmetric>
+			void Add()
+		{
+			typedef Private::FnDispatcherHelper<
+				BaseLhs, BaseRhs,
+				SomeLhs, SomeRhs,
+				ResultType,
+				CastingPolicy<SomeLhs, BaseLhs>,
+				CastingPolicy<SomeRhs, BaseRhs>,
+				callback> Local;
+
+			Add<SomeLhs, SomeRhs>(&Local::Trampoline);
+			if (symmetric)
+			{
+				Add<SomeRhs, SomeLhs>(&Local::TrampolineR);
+			}
+		}
 
 		template <class SomeLhs, class SomeRhs>
 		void Remove()
@@ -331,13 +390,13 @@ namespace Loki
 			if (symmetric)
 			{
 				// Note: symmetry only makes sense where BaseLhs==BaseRhs
-				using AdapterR = Private::FunctorDispatcherHelper<
+				typedef Private::FunctorDispatcherHelper<
 					BaseLhs, BaseLhs,
 					SomeLhs, SomeRhs,
 					ResultType,
 					CastingPolicy<SomeLhs, BaseLhs>,
 					CastingPolicy<SomeRhs, BaseLhs>,
-					Fun, true>;
+					Fun, true> AdapterR;
 
 				backEnd_.Add<SomeRhs, SomeLhs>(FunctorType(AdapterR(fun)));
 			}
@@ -356,5 +415,10 @@ namespace Loki
 	};
 } // namespace Loki
 
+  ////////////////////////////////////////////////////////////////////////////////
+  // Change log:
+  // June 20, 2001: ported by Nick Thurn to gcc 2.95.3. Kudos, Nick!!!
+  // May  10, 2002: ported by Rani Sharoni to VC7 (RTM - 9466)
+  ////////////////////////////////////////////////////////////////////////////////
 
 #endif

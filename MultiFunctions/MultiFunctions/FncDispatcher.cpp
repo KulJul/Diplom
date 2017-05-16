@@ -94,7 +94,7 @@ int main()
 	auto conversationRelationship = new Ñonversation();
 
 
-	Loki::FnDispatcher<GameObject> dispatcher;
+	Loki::FnDispatcherLambda<GameObject> dispatcher;
 	Loki::FnDispatcher3<GameObject> dispatcher3;
 
 	try {
