@@ -9,6 +9,7 @@
 #include "SpaceStantion.h"
 #include "Collide.h"
 #include "Conversation.h"
+#include "DinamicMultiMethod.h"
 
 
 // =====================================================

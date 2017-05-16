@@ -34,6 +34,9 @@
     <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations">
       <UniqueIdentifier>{da3a0433-b84b-4c9d-9f0b-2cf218a57315}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\MultiLoki">
+      <UniqueIdentifier>{f7d63201-1d88-4b34-9c68-045b82cd6573}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp">
@@ -131,9 +134,6 @@
     <ClInclude Include="Loki\NullType.h">
       <Filter>Заголовочные файлы\Loki</Filter>
     </ClInclude>
-    <ClInclude Include="Loki\SimpleMultiMethod.h">
-      <Filter>Заголовочные файлы\Loki</Filter>
-    </ClInclude>
     <ClInclude Include="Loki\Singleton.h">
       <Filter>Заголовочные файлы\Loki</Filter>
     </ClInclude>
@@ -188,5 +188,19 @@
     <ClInclude Include="Conversation.h">
       <Filter>Заголовочные файлы\FncDispatcherExample\Relations</Filter>
     </ClInclude>
+    <ClInclude Include="Loki\SimpleMultiMethod.h">
+      <Filter>Заголовочные файлы\MultiLoki</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DinamicMultiMethod.h">
+      <Filter>Заголовочные файлы\MultiLoki</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MultiFunctions.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
