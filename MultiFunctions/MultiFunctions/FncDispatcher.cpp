@@ -94,6 +94,7 @@ int main()
 
 
 	Loki::FnDispatcher<GameObject> dispatcher;
+	Loki::FnDispatcher3<GameObject> dispatcher3;
 
 	try {
 
@@ -105,6 +106,12 @@ int main()
 		dispatcher.Go(*asteroid1, *spaceShip1);
 
 		
+		dispatcher3.Add<Asteroid, SpaceShip, SpaceStation>([collideRelationship](Asteroid& ast, SpaceShip& spsh, SpaceStation& spst)
+		{
+			return collideRelationship->Colliding(ast, spsh, spst);
+		});
+
+		dispatcher3.Go(*asteroid1, *spaceShip1, *spaceStation1);
 
 
 		////теперь так не будем обращаитьс€, это бы требовала кастинга внутри функций нашей бизнес логики

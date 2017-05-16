@@ -313,7 +313,7 @@ namespace Loki
 		ResultType BasicDispatcher3<BaseType, ResultType, CallbackType>
 		::Go(BaseType& param1, BaseType& param2, BaseType& param3)
 		{
-			typename MapType::key_type k(typeid(param1), typeid(param2), typeid(param3));
+			TYPELIST_3(TypeInfo,TypeInfo,TypeInfo) k(typeid(param1), typeid(param2), typeid(param3));
 			typename MapType::iterator i = callbackMap_.find(k);
 			if (i == callbackMap_.end())
 			{
@@ -329,7 +329,7 @@ namespace Loki
 		template <class, class> class CastingPolicy = DynamicCaster,
 		template <class, class, class>
 	class DispatcherBackend3 = BasicDispatcher3>
-		class FnDispatcher
+		class FnDispatcher3
 	{
 		DispatcherBackend3<BaseType, ResultType,
 			std::function<ResultType(BaseType&, BaseType&, BaseType&)>> backEnd_;
