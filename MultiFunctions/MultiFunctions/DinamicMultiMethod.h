@@ -1,9 +1,141 @@
 #pragma once
 
 #include "Loki/MultiMethods.h"
+#include <string>
+
 
 namespace  Loki
 {
+	//////////////////////////////////////////////
+	//Äכÿ 2 ןאנאלוענמג ס כÿלבהא
+	//////////////////////////////////////////////
+
+	////////////////////////////////////////////////////////////////////////////////
+	// class template BasicDispatcher
+	// Implements a logarithmic double dispatcher for functors (or functions)
+	// Doesn't offer automated casts or symmetry
+	////////////////////////////////////////////////////////////////////////////////
+
+	template
+		<
+		class BaseLhs,
+		class BaseRhs = BaseLhs,
+		typename ResultType = void,
+		typename CallbackType = ResultType(*)(BaseLhs&, BaseRhs&)
+		>
+		class BasicDispatcherLambda
+	{
+		typedef std::pair<TypeInfo, TypeInfo> KeyType;
+		typedef CallbackType MappedType;
+		typedef AssocVector<KeyType, MappedType> MapType;
+		MapType callbackMap_;
+
+		void DoAdd(TypeInfo lhs, TypeInfo rhs, CallbackType fun);
+		bool DoRemove(TypeInfo lhs, TypeInfo rhs);
+
+	public:
+		template <class SomeLhs, class SomeRhs>
+		void Add(CallbackType fun)
+		{
+			DoAdd(typeid(SomeLhs), typeid(SomeRhs), fun);
+		}
+
+		template <class SomeLhs, class SomeRhs>
+		bool Remove()
+		{
+			return DoRemove(typeid(SomeLhs), typeid(SomeRhs));
+		}
+
+		ResultType Go(BaseLhs& lhs, BaseRhs& rhs);
+	};
+
+	// Non-inline to reduce compile time overhead...
+	template <class BaseLhs, class BaseRhs,
+		typename ResultType, typename CallbackType>
+		void BasicDispatcherLambda<BaseLhs, BaseRhs, ResultType, CallbackType>
+		::DoAdd(TypeInfo lhs, TypeInfo rhs, CallbackType fun)
+	{
+		callbackMap_[KeyType(lhs, rhs)] = fun;
+	}
+
+	template <class BaseLhs, class BaseRhs,
+		typename ResultType, typename CallbackType>
+		bool BasicDispatcherLambda<BaseLhs, BaseRhs, ResultType, CallbackType>
+		::DoRemove(TypeInfo lhs, TypeInfo rhs)
+	{
+		return callbackMap_.erase(KeyType(lhs, rhs)) == 1;
+	}
+
+	template <class BaseLhs, class BaseRhs,
+		typename ResultType, typename CallbackType>
+		ResultType BasicDispatcherLambda<BaseLhs, BaseRhs, ResultType, CallbackType>
+		::Go(BaseLhs& lhs, BaseRhs& rhs)
+	{
+		typename MapType::key_type k(typeid(lhs), typeid(rhs));
+		typename MapType::iterator i = callbackMap_.find(k);
+		if (i == callbackMap_.end())
+		{
+			throw std::runtime_error("Function not found");
+		}
+		return (i->second)(lhs, rhs);
+	}
+
+
+	////////////////////////////////////////////////////////////////////////////////
+	// class template FnDispatcher
+	// Implements an automatic logarithmic double dispatcher for functions
+	// Features automated conversions
+	////////////////////////////////////////////////////////////////////////////////
+
+	template <class BaseLhs, class BaseRhs = BaseLhs,
+		typename ResultType = void,
+		template <class, class> class CastingPolicy = DynamicCaster,
+		template <class, class, class, class>
+	class DispatcherBackend = BasicDispatcherLambda>
+		class FnDispatcherLambda
+	{
+		DispatcherBackend<BaseLhs, BaseRhs, ResultType,
+			std::function<ResultType(BaseLhs&, BaseRhs&)>> backEnd_;
+
+
+		template <class SomeLhs, class SomeRhs>
+		void AddToBackDisp(std::function<ResultType(BaseLhs&, BaseRhs&)> pFun)
+		{
+			return backEnd_.Add<SomeLhs, SomeRhs>(pFun);
+		}
+
+	public:
+
+
+		template <class SomeLhs, class SomeRhs,
+			bool symmetric = false>
+			void Add(std::function<ResultType(SomeLhs&, SomeRhs&)> callback)
+		{
+			AddToBackDisp<SomeLhs, SomeRhs>([=](BaseLhs& lhs, BaseRhs& rhs)
+			{
+				return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
+			});
+			if (symmetric)
+			{
+				AddToBackDisp<SomeRhs, SomeLhs>([=](BaseRhs& rhs, BaseLhs& lhs)
+				{
+					return callback(CastingPolicy<SomeLhs, BaseLhs>::Cast(lhs), CastingPolicy<SomeRhs, BaseRhs>::Cast(rhs));
+				});
+			}
+		}
+
+
+		template <class SomeLhs, class SomeRhs>
+		void Remove()
+		{
+			backEnd_.Remove<SomeLhs, SomeRhs>();
+		}
+
+		ResultType Go(BaseLhs& lhs, BaseRhs& rhs)
+		{
+			return backEnd_.Go(lhs, rhs);
+		}
+	};
 
 	////////////////////////////////////////////////////////////////////////////////////
 	//Äכÿ 3 ןאנאלוענמג
