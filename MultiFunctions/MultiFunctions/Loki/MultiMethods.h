@@ -6,6 +6,7 @@
 #include "Functor.h"
 #include "AssocVector.h"
 #include "Typelist.h"
+#include <string>
 
 
 namespace Loki
@@ -268,7 +269,7 @@ namespace Loki
 		>
 		class BasicDispatcher3
 	{
-		typedef TYPELIST_3(TypeInfo, TypeInfo, TypeInfo) KeyType;
+		typedef std::string KeyType;
 		typedef CallbackType MappedType;
 		typedef AssocVector<KeyType, MappedType> MapType;
 		MapType callbackMap_;
@@ -290,6 +291,13 @@ namespace Loki
 		}
 
 		ResultType Go(BaseType& param1, BaseType& param2, BaseType& param3);
+
+		std::string GetKey(TypeInfo tp1, TypeInfo tp2, TypeInfo tp3)
+		{
+			return  std::to_string(tp1.Get().hash_code())
+				+ std::to_string(tp1.Get().hash_code())
+				+ std::to_string(tp1.Get().hash_code());
+		}
 	};
 
 	// Non-inline to reduce compile time overhead...
@@ -297,7 +305,7 @@ namespace Loki
 		void BasicDispatcher3<BaseType, ResultType, CallbackType>
 		::DoAdd(TypeInfo tp1, TypeInfo tp2, TypeInfo tp3, CallbackType fun)
 		{
-			callbackMap_[KeyType(tp1, tp2, tp3)] = fun;
+			callbackMap_[GetKey(tp1, tp2, tp3)] = fun;
 		}
 
 	template <class BaseType,
@@ -305,7 +313,7 @@ namespace Loki
 		bool BasicDispatcher3<BaseType, ResultType, CallbackType>
 		::DoRemove(TypeInfo tp1, TypeInfo tp2, TypeInfo tp3)
 		{
-			return callbackMap_.erase(KeyType(tp1, tp2, tp3)) == 1;
+			return callbackMap_.erase(GetKey(tp1, tp2, tp3)) == 1;
 		}
 
 	template <class BaseType,
@@ -313,14 +321,17 @@ namespace Loki
 		ResultType BasicDispatcher3<BaseType, ResultType, CallbackType>
 		::Go(BaseType& param1, BaseType& param2, BaseType& param3)
 		{
-			TYPELIST_3(TypeInfo,TypeInfo,TypeInfo) k(typeid(param1), typeid(param2), typeid(param3));
-			typename MapType::iterator i = callbackMap_.find(k);
+			auto key = GetKey(typeid(param1), typeid(param2), typeid(param3));
+			typename MapType::iterator i = callbackMap_.find(key);
 			if (i == callbackMap_.end())
 			{
 				throw std::runtime_error("Function not found");
 			}
 			return (i->second)(param1, param2, param3);
 		}
+
+
+
 
 
 	///////////////////////////////////////////
