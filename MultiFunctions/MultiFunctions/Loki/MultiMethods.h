@@ -263,7 +263,7 @@ namespace Loki
 	// Doesn't offer automated casts or symmetry
 	////////////////////////////////////////////////////////////////////////////////
 
-	template<class BaseType, class ResultType = void, class CallbackType>
+	template<class BaseType, class ResultType = void, class CallbackType = void>
 		class MultiBasicDispatcher
 	{
 
@@ -303,7 +303,7 @@ namespace Loki
 	template <class BaseType,
 		typename ResultType = void,
 		template <class, class> class CastingPolicy = DynamicCaster,
-		template <class, class, class, class>
+		template <class, class, class>
 	class DispatcherBackend = MultiBasicDispatcher>
 		class MultiFnDispatcher
 	{
@@ -311,10 +311,10 @@ namespace Loki
 			std::function<ResultType(BaseType&...)>> backEnd_;
 
 
-		template <class... SomeTypes>
-		void AddToBackDisp(std::function<ResultType(SomeTypes&...)> pFun)
+		template <class... BaseType>
+		void AddToBackDisp(std::function<ResultType(BaseType&...)> pFun)
 		{
-			return backEnd_.Add<SomeTypes>(pFun);
+			return backEnd_.Add<BaseType>(pFun);
 		}
 
 	public:
