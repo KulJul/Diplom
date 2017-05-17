@@ -22,6 +22,7 @@
     <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="Collide.cpp" />
     <ClCompile Include="ContainerMap.cpp" />
+    <ClCompile Include="DrawingExample.cpp" />
     <ClCompile Include="FncDispatcher.cpp" />
     <ClCompile Include="FunctorDispatcher.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -34,6 +35,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Asteroid.h" />
+    <ClInclude Include="BoldBrush.h" />
+    <ClInclude Include="Brush.h" />
     <ClInclude Include="Caller.h" />
     <ClInclude Include="Collide.h" />
     <ClInclude Include="ContainerMap.h" />
@@ -69,13 +72,22 @@
     <ClInclude Include="Loki\VC_Alignment.h" />
     <ClInclude Include="Loki\Visitor.h" />
     <ClInclude Include="MyMap.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Shape.h" />
+    <ClInclude Include="ShapeDrawing.h" />
     <ClInclude Include="SpaceShip.h" />
     <ClInclude Include="SpaceStantion.h" />
+    <ClInclude Include="ThinBrush.h" />
+    <ClInclude Include="Triangle.h" />
     <ClInclude Include="typecollection.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MultiFunctions.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Drawing.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{28AC613A-930F-435D-A75E-6699D1B99324}</ProjectGuid>

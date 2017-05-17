@@ -37,6 +37,12 @@
     <Filter Include="Заголовочные файлы\MultiLoki">
       <UniqueIdentifier>{f7d63201-1d88-4b34-9c68-045b82cd6573}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing">
+      <UniqueIdentifier>{c663d828-99fb-4dc4-bad1-1311ad175138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations\Drawing">
+      <UniqueIdentifier>{eb94ec39-196e-4f82-81b6-51b599ae1d6a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp">
@@ -74,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="Asteroid.cpp">
       <Filter>Файлы исходного кода\FncDispatcherExample\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawingExample.cpp">
+      <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -197,10 +206,35 @@
     <ClInclude Include="DinamicMultiMethod.h">
       <Filter>Заголовочные файлы\MultiLoki</Filter>
     </ClInclude>
+    <ClInclude Include="BoldBrush.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="Brush.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeDrawing.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Relations\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="ThinBrush.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MultiFunctions.rc">
       <Filter>Файлы ресурсов</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Drawing.cd" />
   </ItemGroup>
 </Project>
