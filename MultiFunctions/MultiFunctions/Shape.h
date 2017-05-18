@@ -7,10 +7,10 @@ struct Shape
 	double position_x;
 	double position_y;
 
-	Brush* brush;
+	//Brush* brush;
 
-	virtual void Render()
-	{
-		brush -> Draw();
-	}
+	//virtual void Render()
+	//{
+	//	brush -> Draw();
+	//}
 };

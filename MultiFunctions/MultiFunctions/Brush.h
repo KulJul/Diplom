@@ -4,8 +4,8 @@ struct Brush
 	double x;
 	double y;
 
-	virtual void Draw()
-	{
-		
-	}
+	//virtual void Draw()
+	//{
+	//	
+	//}
 };

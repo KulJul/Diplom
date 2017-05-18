@@ -7,8 +7,8 @@ struct  Rectangle : Shape
 	double hight;
 	double width;
 
-	void Render()
-	{
-		brush -> Draw();
-	}
+	//void Render()
+	//{
+	//	brush -> Draw();
+	//}
 };

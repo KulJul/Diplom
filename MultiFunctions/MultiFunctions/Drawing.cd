@@ -3,46 +3,50 @@
   <Struct Name="Brush">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>Brush.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="Shape">
     <Position X="2" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAMABAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAA=</HashCode>
       <FileName>Shape.h</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="brush" />
-    </ShowAsAssociation>
   </Struct>
   <Struct Name="BoldBrush">
-    <Position X="5.5" Y="3.25" Width="1.5" />
+    <Position X="5.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>BoldBrush.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="ThinBrush">
-    <Position X="7.75" Y="3.25" Width="1.5" />
+    <Position X="7.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>ThinBrush.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="Rectangle">
-    <Position X="1" Y="3.25" Width="1.5" />
+    <Position X="1" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Rectangle.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="Triangle">
-    <Position X="3" Y="3.25" Width="1.5" />
+    <Position X="3" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Triangle.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ShapeDrawing">
+    <Position X="3.25" Y="5.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAACAIAAAAA=</HashCode>
+      <FileName>ShapeDrawing.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Font Name="Segoe UI" Size="9" />

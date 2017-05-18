@@ -8,8 +8,8 @@ struct ThinBrush
 	int color;
 	bool isSpline;
 
-	void Draw()
-	{
+	//void Draw()
+	//{
 
-	}
+	//}
 };

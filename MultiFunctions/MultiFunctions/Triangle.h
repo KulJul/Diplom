@@ -8,8 +8,8 @@ struct  Triangle : Shape
 	double base;
 	double hight;
 
-	void Render()
-	{
-		brush -> Draw();
-	}
+	//void Render()
+	//{
+	//	brush -> Draw();
+	//}
 };
