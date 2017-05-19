@@ -10,6 +10,9 @@
 #include "Collide.h"
 #include "Conversation.h"
 #include "DinamicMultiMethod.h"
+#include "BoldBrush.h"
+#include "Rectangle.h"
+#include "ShapeDrawing.h"
 
 
 // =====================================================
@@ -72,6 +75,16 @@ typedef Loki::FnDispatcher<GameObject> MyDispatcher;
 
 int main()
 {
+	auto shape = new Rectangle();
+	auto brush = new BoldBrush();	
+	auto shapeDrawing = new ShapeDrawing();
+
+	shapeDrawing->Init();
+	shapeDrawing->Drawing(*shape, *brush);
+
+
+
+
 	std::vector<GameObject> gameObjectCollection;
 
 	GameObject* asteroid1 = new Asteroid();

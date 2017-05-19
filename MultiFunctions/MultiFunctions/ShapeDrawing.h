@@ -33,6 +33,11 @@ struct ShapeDrawing
 		});
 	}
 
+	void Drawing(Shape& shape, Brush& brush)
+	{
+		dispatcher.Go(shape, brush);
+	}
+
 	void Drawing(Triangle& shape, ThinBrush& brush)
 	{
 		

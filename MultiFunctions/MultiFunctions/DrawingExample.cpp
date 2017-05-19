@@ -12,9 +12,9 @@ void DrawingExample()
 	auto brush = new BoldBrush();
 
 	auto shape = new Triangle();
-	shape->brush = brush;
-	
-	brush->Draw();
+	//shape->brush = brush;
+	//
+	//brush->Draw();
 
 
 }
