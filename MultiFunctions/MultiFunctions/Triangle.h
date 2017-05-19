@@ -1,6 +1,6 @@
 #pragma once
 
-#include  "Shape.h"
+#include "Shape.h"
 
 struct  Triangle : Shape
 {
@@ -12,4 +12,9 @@ struct  Triangle : Shape
 	//{
 	//	brush -> Draw();
 	//}
+
+	void Accept(ShapeMetricVisitor& metricVivsitor)
+	{
+		//metricVivsitor.VisitRectangle(this);
+	}
 };

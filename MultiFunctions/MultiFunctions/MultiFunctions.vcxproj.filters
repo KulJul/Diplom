@@ -227,6 +227,9 @@
     <ClInclude Include="ThinBrush.h">
       <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
     </ClInclude>
+    <ClInclude Include="ShapeMetricVisitor.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MultiFunctions.rc">
@@ -236,5 +239,6 @@
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
     <None Include="Drawing.cd" />
+    <None Include="MetricVisitors.cd" />
   </ItemGroup>
 </Project>

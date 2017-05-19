@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Brush.h"
+#include "ShapeMetricVisitor.h"
 
 struct Shape
 {
@@ -13,4 +14,7 @@ struct Shape
 	//{
 	//	brush -> Draw();
 	//}
+
+	virtual void Accept(ShapeMetricVisitor& metricVivsitor)
+	{}
 };
