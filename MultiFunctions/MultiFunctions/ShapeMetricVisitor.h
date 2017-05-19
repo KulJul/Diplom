@@ -5,36 +5,36 @@
 
 struct ShapeMetricVisitor
 {
-	virtual void VisitTriangle(Triangle& shape)
-	{
-		
-	}
-	virtual void VisitRectangle(Rectangle& shape)
-	{
-		
-	}
+	//virtual void VisitTriangle(Triangle& shape)
+	//{
+	//	
+	//}
+	//virtual void VisitRectangle(Rectangle& shape)
+	//{
+	//	
+	//}
 };
 
 struct AreaVisitor : ShapeMetricVisitor
 {
-	void VisitTriangle(Triangle& shape)
-	{
-		
-	}
-	void VisitRectangle(Rectangle& shape)
-	{
-		
-	}
+	//void VisitTriangle(Triangle& shape)
+	//{
+	//	
+	//}
+	//void VisitRectangle(Rectangle& shape)
+	//{
+	//	
+	//}
 };
 
 struct SumAngleVisitor : ShapeMetricVisitor
 {
-	void VisitTriangle(Triangle& shape)
-	{
+	//void VisitTriangle(Triangle& shape)
+	//{
 
-	}
-	void VisitRectangle(Rectangle& shape)
-	{
+	//}
+	//void VisitRectangle(Rectangle& shape)
+	//{
 
-	}
+	//}
 };

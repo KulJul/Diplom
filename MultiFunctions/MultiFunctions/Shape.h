@@ -15,6 +15,6 @@ struct Shape
 	//	brush -> Draw();
 	//}
 
-	virtual void Accept(ShapeMetricVisitor& metricVivsitor)
-	{}
+	//virtual void Accept(ShapeMetricVisitor& metricVivsitor)
+	//{}
 };

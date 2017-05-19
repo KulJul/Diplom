@@ -12,8 +12,8 @@ struct  Rectangle : Shape
 	//	brush -> Draw();
 	//}
 
-	void Accept(ShapeMetricVisitor& metricVivsitor)
-	{
-		//metricVivsitor.VisitRectangle(this);
-	}
+	//void Accept(ShapeMetricVisitor& metricVivsitor)
+	//{
+	//	//metricVivsitor.VisitRectangle(this);
+	//}
 };

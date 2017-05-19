@@ -71,6 +71,7 @@
     <ClInclude Include="Loki\Variant.h" />
     <ClInclude Include="Loki\VC_Alignment.h" />
     <ClInclude Include="Loki\Visitor.h" />
+    <ClInclude Include="MetricCounting.h" />
     <ClInclude Include="MyMap.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="resource.h" />

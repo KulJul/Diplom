@@ -43,6 +43,9 @@
     <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations\Drawing">
       <UniqueIdentifier>{eb94ec39-196e-4f82-81b6-51b599ae1d6a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations\Metric">
+      <UniqueIdentifier>{be3b69d6-0a3a-4d41-b1fc-6a8d9e84c87d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp">
@@ -229,6 +232,9 @@
     </ClInclude>
     <ClInclude Include="ShapeMetricVisitor.h">
       <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="MetricCounting.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Relations\Metric</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
