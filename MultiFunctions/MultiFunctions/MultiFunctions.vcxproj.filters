@@ -58,6 +58,9 @@
     <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Observer">
       <UniqueIdentifier>{5b7aa03b-8216-423a-8937-bb6e3494c0be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations\Observing">
+      <UniqueIdentifier>{f619e1cb-3a89-43fd-aa09-18d5acf314a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp">
@@ -256,6 +259,9 @@
     </ClInclude>
     <ClInclude Include="FlatObserver.h">
       <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Observing.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Relations\Observing</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

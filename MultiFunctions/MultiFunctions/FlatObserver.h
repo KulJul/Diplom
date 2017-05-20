@@ -10,11 +10,11 @@ struct FlatObserver : Observer
 	double scale_x;
 	double scale_y;
 
-	Triangle triangle;
-	Rectangle rectangle;
+	//Triangle triangle;
+	//Rectangle rectangle;
 
-	void Update()
-	{
+	//void Update()
+	//{
 
-	}
+	//}
 };

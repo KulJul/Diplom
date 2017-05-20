@@ -46,6 +46,7 @@
     <ClInclude Include="FlatObserver.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="game_hierarchy.hpp" />
+    <ClInclude Include="Observing.h" />
     <ClInclude Include="Loki\AbstractFactory.h" />
     <ClInclude Include="Loki\AssocVector.h" />
     <ClInclude Include="Loki\ContainerMap.h" />

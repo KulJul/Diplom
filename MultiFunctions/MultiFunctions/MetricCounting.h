@@ -7,7 +7,7 @@
 
 struct ShapeDrawing
 {
-	Loki::FnDispatcherLambda<Shape, Brush> dispatcher;
+	Loki::FnDispatcherLambda<Shape, ShapeMetricVisitor> dispatcher;
 
 	void Init()
 	{
@@ -32,7 +32,7 @@ struct ShapeDrawing
 		});
 	}
 
-	void CountMetric(Shape& shape, Brush& metricCounter)
+	void CountMetric(Shape& shape, ShapeMetricVisitor& metricCounter)
 	{
 		dispatcher.Go(shape, metricCounter);
 	}

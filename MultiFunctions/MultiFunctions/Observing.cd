@@ -3,70 +3,49 @@
   <Struct Name="Observer">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Observer.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="FlatObserver">
-    <Position X="4.75" Y="3.25" Width="1.5" />
+    <Position X="4.75" Y="3" Width="1.5" />
     <InheritanceLine Type="Observer" ManuallyRouted="true">
       <Path>
-        <Point X="6.5" Y="1.603" />
-        <Point X="6.5" Y="2.614" />
-        <Point X="5.5" Y="2.614" />
-        <Point X="5.5" Y="3.25" />
+        <Point X="6.5" Y="1.368" />
+        <Point X="6.5" Y="2.239" />
+        <Point X="5.5" Y="2.239" />
+        <Point X="5.5" Y="3" />
       </Path>
     </InheritanceLine>
-    <AssociationLine Name="rectangle" Type="Rectangle" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="5.062" Y="5.127" />
-        <Point X="5.062" Y="5.401" />
-        <Point X="1.638" Y="5.401" Type="JumpStart" />
-        <Point X="1.472" Y="5.401" Type="JumpEnd" />
-        <Point X="1.047" Y="5.401" />
-        <Point X="1.047" Y="4.675" />
-      </Path>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAGAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAA=</HashCode>
       <FileName>FlatObserver.h</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="triangle" />
-      <Field Name="rectangle" />
-    </ShowAsAssociation>
   </Struct>
   <Struct Name="_3DObserver">
-    <Position X="7" Y="3.25" Width="1.5" />
-    <AssociationLine Name="rectangle" Type="Rectangle" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <Position X="7" Y="3" Width="1.5" />
+    <InheritanceLine Type="Observer" ManuallyRouted="true">
       <Path>
-        <Point X="7.25" Y="5.319" />
-        <Point X="7.25" Y="5.727" />
-        <Point X="1.555" Y="5.727" />
-        <Point X="1.555" Y="4.675" />
+        <Point X="6.5" Y="1.368" />
+        <Point X="6.5" Y="2.26" />
+        <Point X="7.75" Y="2.26" />
+        <Point X="7.75" Y="3" />
       </Path>
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="-0.567" Y="0.185" />
-      </MemberNameLabel>
-    </AssociationLine>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAgAAAAAAACSAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAAAAAACAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>3DObserver.h</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="triangle" />
-      <Field Name="rectangle" />
-    </ShowAsAssociation>
   </Struct>
   <Struct Name="Rectangle">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Rectangle.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="Triangle">
-    <Position X="2.5" Y="3.25" Width="1.5" />
+    <Position X="2.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Triangle.h</FileName>
@@ -75,12 +54,16 @@
   <Struct Name="Shape">
     <Position X="1.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAABMAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAA=</HashCode>
       <FileName>Shape.h</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="observers" />
-    </ShowAsAssociation>
+  </Struct>
+  <Struct Name="Observing">
+    <Position X="3" Y="5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Observing.h</FileName>
+    </TypeIdentifier>
   </Struct>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

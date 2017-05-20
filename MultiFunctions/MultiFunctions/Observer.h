@@ -8,8 +8,8 @@ struct Observer
 	//	
 	//}
 
-	virtual void Update()
-	{
-		
-	}
+	//virtual void Update()
+	//{
+	//	
+	//}
 };

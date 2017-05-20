@@ -20,10 +20,10 @@ struct Shape
 	//virtual void Accept(ShapeMetricVisitor& metricVivsitor)
 	//{}
 
-	Observer observers;
+	//Observer observers;
 
-	void Notify()
-	{
-		
-	}
+	//void Notify()
+	//{
+	//	
+	//}
 };

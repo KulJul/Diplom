@@ -10,11 +10,11 @@ struct _3DObserver : Observer
 	double camera_position_y;
 	double camera_position_z;
 
-	Triangle triangle;
-	Rectangle rectangle;
+	//Triangle triangle;
+	//Rectangle rectangle;
 
-	void Update()
-	{
+	//void Update()
+	//{
 
-	}
+	//}
 };
