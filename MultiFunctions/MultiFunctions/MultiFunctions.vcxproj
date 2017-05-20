@@ -34,6 +34,7 @@
     <ClCompile Include="Сonversation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="3DObserver.h" />
     <ClInclude Include="Asteroid.h" />
     <ClInclude Include="BoldBrush.h" />
     <ClInclude Include="Brush.h" />
@@ -42,6 +43,7 @@
     <ClInclude Include="ContainerMap.h" />
     <ClInclude Include="Conversation.h" />
     <ClInclude Include="DinamicMultiMethod.h" />
+    <ClInclude Include="FlatObserver.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="game_hierarchy.hpp" />
     <ClInclude Include="Loki\AbstractFactory.h" />
@@ -73,6 +75,7 @@
     <ClInclude Include="Loki\Visitor.h" />
     <ClInclude Include="MetricCounting.h" />
     <ClInclude Include="MyMap.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shape.h" />
@@ -91,6 +94,7 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="Drawing.cd" />
     <None Include="MetricVisitors.cd" />
+    <None Include="Observing.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{28AC613A-930F-435D-A75E-6699D1B99324}</ProjectGuid>

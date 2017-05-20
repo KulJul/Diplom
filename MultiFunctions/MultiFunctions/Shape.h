@@ -2,6 +2,8 @@
 
 #include "Brush.h"
 #include "ShapeMetricVisitor.h"
+#include "Observer.h"
+#include <vector>
 
 struct Shape
 {
@@ -17,4 +19,11 @@ struct Shape
 
 	//virtual void Accept(ShapeMetricVisitor& metricVivsitor)
 	//{}
+
+	Observer observers;
+
+	void Notify()
+	{
+		
+	}
 };

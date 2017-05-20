@@ -46,6 +46,18 @@
     <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations\Metric">
       <UniqueIdentifier>{be3b69d6-0a3a-4d41-b1fc-6a8d9e84c87d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brush">
+      <UniqueIdentifier>{fcde563f-f341-4716-8200-5dce40c9cb24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Shape">
+      <UniqueIdentifier>{dee2d243-d0ed-46c1-b0fe-143a24c9aa63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Metric">
+      <UniqueIdentifier>{059ce4ac-ee49-4540-8d9a-6175e60e3f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Observer">
+      <UniqueIdentifier>{5b7aa03b-8216-423a-8937-bb6e3494c0be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp">
@@ -209,32 +221,41 @@
     <ClInclude Include="DinamicMultiMethod.h">
       <Filter>Заголовочные файлы\MultiLoki</Filter>
     </ClInclude>
-    <ClInclude Include="BoldBrush.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
-    </ClInclude>
-    <ClInclude Include="Brush.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
-    </ClInclude>
-    <ClInclude Include="Shape.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
-    </ClInclude>
-    <ClInclude Include="Triangle.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
-    </ClInclude>
     <ClInclude Include="ShapeDrawing.h">
       <Filter>Заголовочные файлы\FncDispatcherExample\Relations\Drawing</Filter>
     </ClInclude>
-    <ClInclude Include="ThinBrush.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
-    </ClInclude>
-    <ClInclude Include="ShapeMetricVisitor.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing</Filter>
-    </ClInclude>
     <ClInclude Include="MetricCounting.h">
       <Filter>Заголовочные файлы\FncDispatcherExample\Relations\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="BoldBrush.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="Brush.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="ThinBrush.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeMetricVisitor.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Metric</Filter>
+    </ClInclude>
+    <ClInclude Include="3DObserver.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="FlatObserver.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Observer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -246,5 +267,6 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="Drawing.cd" />
     <None Include="MetricVisitors.cd" />
+    <None Include="Observing.cd" />
   </ItemGroup>
 </Project>
