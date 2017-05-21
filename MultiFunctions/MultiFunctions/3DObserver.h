@@ -17,4 +17,9 @@ struct _3DObserver : Observer
 	//{
 
 	//}
+
+	void foo()
+	{
+
+	}
 };

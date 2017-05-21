@@ -12,4 +12,9 @@ struct Observer
 	//{
 	//	
 	//}
+
+	virtual void foo()
+	{
+
+	}
 };

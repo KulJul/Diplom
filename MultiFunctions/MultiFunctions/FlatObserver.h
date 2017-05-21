@@ -17,4 +17,9 @@ struct FlatObserver : Observer
 	//{
 
 	//}
+
+	void foo()
+	{
+
+	}
 };

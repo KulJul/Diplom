@@ -13,6 +13,10 @@
 #include "BoldBrush.h"
 #include "Rectangle.h"
 #include "ShapeDrawing.h"
+#include "MetricCounting.h"
+#include "Observer.h"
+#include "FlatObserver.h"
+#include "Observing.h"
 
 
 // =====================================================
@@ -83,6 +87,18 @@ int main()
 	shapeDrawing->Drawing(*shape, *brush);
 
 
+	ShapeMetricVisitor* metricVisitor = new AreaVisitor();
+	auto metricCounting = new MetricCounting();
+
+	metricCounting->Init();
+	metricCounting->CountMetric(*shape, *metricVisitor);
+
+
+	Observer* observer = new FlatObserver();
+	auto observing = new Observing();
+
+	observing->Init();
+	observing->Observe(*shape, *observer);
 
 
 	std::vector<GameObject> gameObjectCollection;
