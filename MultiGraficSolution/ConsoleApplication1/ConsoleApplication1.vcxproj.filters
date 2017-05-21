@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы исходного кода">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы\space_obj">
+      <UniqueIdentifier>{9be700bf-2c5b-412b-8c44-eaeb29019152}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\library">
+      <UniqueIdentifier>{bef65033-abf1-4244-b214-fac52c1b80c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\library\Loki">
+      <UniqueIdentifier>{b84c2f23-d840-4e73-b053-dd0670ed784b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\library\Dinamic">
+      <UniqueIdentifier>{101ae161-018d-49a8-b324-dd430c48a092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\library\Static">
+      <UniqueIdentifier>{e60716ed-85e5-488e-a1dc-4cfcd647b033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\library\Obj">
+      <UniqueIdentifier>{ac501714-8189-488e-999a-d2de50e839e3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tgaload.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Исходный код.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="MilkshapeModel.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="library\ContainerMap.cpp">
+      <Filter>Заголовочные файлы\library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\MyMap.cpp">
+      <Filter>Заголовочные файлы\library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\Сonversation.cpp">
+      <Filter>Заголовочные файлы\library</Filter>
+    </ClCompile>
+    <ClCompile Include="library\DinamicMultimethod.cpp">
+      <Filter>Заголовочные файлы\library\Dinamic</Filter>
+    </ClCompile>
+    <ClCompile Include="library\Asteroid.cpp">
+      <Filter>Заголовочные файлы\library\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="library\StaticMultimethod.cpp">
+      <Filter>Заголовочные файлы\library\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="library\SpaceShip.cpp">
+      <Filter>Заголовочные файлы\library\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="library\GameObject.cpp">
+      <Filter>Заголовочные файлы\library\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="library\FncDispatcher.cpp">
+      <Filter>Заголовочные файлы\library\Dinamic</Filter>
+    </ClCompile>
+    <ClCompile Include="library\FunctorDispatcher.cpp">
+      <Filter>Заголовочные файлы\library\Dinamic</Filter>
+    </ClCompile>
+    <ClCompile Include="library\SpaceStation.cpp">
+      <Filter>Заголовочные файлы\library\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="library\Collide.cpp">
+      <Filter>Заголовочные файлы\library\Obj</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\sp10\Downloads\space.bmp">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="C:\Users\sp10\Downloads\ast.bmp">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="C:\Users\sp10\Downloads\ship.bmp">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="C:\Users\sp10\Downloads\ship2.bmp">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="Data\Wood.bmp">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tgaload.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="MilkshapeModel.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Заголовочные файлы\space_obj</Filter>
+    </ClInclude>
+    <ClInclude Include="library\ContainerMap.h">
+      <Filter>Заголовочные файлы\library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\MyMap.h">
+      <Filter>Заголовочные файлы\library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\typecollection.h">
+      <Filter>Заголовочные файлы\library</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\AbstractFactory.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\AssocVector.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\ContainerMap.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\DataGenerators.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\EmptyType.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\ExecuteSimpleMethod.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\Factory.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\Functor.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\HierarchyGenerators.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\LokiTypeInfo.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\MinMax.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\MultiMethods.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\MyMap.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\NullType.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\SimpleMultiMethod.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\Singleton.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\SmallObj.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\SmartPtr.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\static_check.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\Threads.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\typecollection.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\Typelist.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\TypeManip.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\TypeTraits.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\Variant.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\VC_Alignment.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\Visitor.h">
+      <Filter>Заголовочные файлы\library\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\SimpleMiltimethodSeveral.h">
+      <Filter>Заголовочные файлы\library\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="library\SimpleMultimethodSim.h">
+      <Filter>Заголовочные файлы\library\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Asteroid.h">
+      <Filter>Заголовочные файлы\library\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="library\SpaceShip.h">
+      <Filter>Заголовочные файлы\library\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="library\GameObject.h">
+      <Filter>Заголовочные файлы\library\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="library\game_hierarchy.hpp">
+      <Filter>Заголовочные файлы\library\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="library\SpaceStantion.h">
+      <Filter>Заголовочные файлы\library\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="library\FnDispetcher.h">
+      <Filter>Заголовочные файлы\library\Dinamic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\Model.ms3d" />
+  </ItemGroup>
+</Project>
