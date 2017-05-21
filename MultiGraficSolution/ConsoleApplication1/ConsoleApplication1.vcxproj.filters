@@ -31,6 +31,9 @@
     <Filter Include="Заголовочные файлы\library\Obj">
       <UniqueIdentifier>{ac501714-8189-488e-999a-d2de50e839e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\library\MultiLoki">
+      <UniqueIdentifier>{ee8707b5-99fd-40ce-943a-16cc1da9de26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tgaload.cpp">
@@ -169,9 +172,6 @@
     <ClInclude Include="library\Loki\NullType.h">
       <Filter>Заголовочные файлы\library\Loki</Filter>
     </ClInclude>
-    <ClInclude Include="library\Loki\SimpleMultiMethod.h">
-      <Filter>Заголовочные файлы\library\Loki</Filter>
-    </ClInclude>
     <ClInclude Include="library\Loki\Singleton.h">
       <Filter>Заголовочные файлы\library\Loki</Filter>
     </ClInclude>
@@ -231,6 +231,12 @@
     </ClInclude>
     <ClInclude Include="library\FnDispetcher.h">
       <Filter>Заголовочные файлы\library\Dinamic</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\DinamicMultiMethod.h">
+      <Filter>Заголовочные файлы\library\MultiLoki</Filter>
+    </ClInclude>
+    <ClInclude Include="library\Loki\SimpleMultiMethod.h">
+      <Filter>Заголовочные файлы\library\MultiLoki</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

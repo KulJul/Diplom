@@ -114,6 +114,7 @@
     <ClInclude Include="library\Loki\AssocVector.h" />
     <ClInclude Include="library\Loki\ContainerMap.h" />
     <ClInclude Include="library\Loki\DataGenerators.h" />
+    <ClInclude Include="library\Loki\DinamicMultiMethod.h" />
     <ClInclude Include="library\Loki\EmptyType.h" />
     <ClInclude Include="library\Loki\ExecuteSimpleMethod.h" />
     <ClInclude Include="library\Loki\Factory.h" />
