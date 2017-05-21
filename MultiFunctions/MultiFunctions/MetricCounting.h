@@ -4,8 +4,9 @@
 #include "Triangle.h"
 #include "Rectangle.h"
 #include "DinamicMultiMethod.h"
+#include "ShapeMetricVisitor.h"
 
-struct ShapeDrawing
+struct MetricCounting
 {
 	Loki::FnDispatcherLambda<Shape, ShapeMetricVisitor> dispatcher;
 

@@ -51,18 +51,18 @@
       <FileName>Triangle.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="Shape">
-    <Position X="1.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAA=</HashCode>
-      <FileName>Shape.h</FileName>
-    </TypeIdentifier>
-  </Struct>
   <Struct Name="Observing">
     <Position X="3" Y="5" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAgAAAAAAIAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>Observing.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Shape">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shape.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Font Name="Segoe UI" Size="9" />

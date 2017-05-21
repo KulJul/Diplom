@@ -8,6 +8,11 @@ struct ThinBrush
 	int color;
 	bool isSpline;
 
+	virtual void foo()
+	{
+
+	}
+
 	//void Draw()
 	//{
 

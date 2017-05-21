@@ -17,4 +17,9 @@ struct  Triangle : Shape
 	//{
 	//	//metricVivsitor.VisitRectangle(this);
 	//}
+
+	void foo()
+	{
+
+	}
 };

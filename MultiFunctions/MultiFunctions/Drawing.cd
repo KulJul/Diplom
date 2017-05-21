@@ -7,13 +7,6 @@
       <FileName>Brush.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="Shape">
-    <Position X="2" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAA=</HashCode>
-      <FileName>Shape.h</FileName>
-    </TypeIdentifier>
-  </Struct>
   <Struct Name="BoldBrush">
     <Position X="5.5" Y="3" Width="1.5" />
     <TypeIdentifier>
@@ -47,6 +40,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAACAIAAAAA=</HashCode>
       <FileName>ShapeDrawing.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Shape">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shape.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Font Name="Segoe UI" Size="9" />

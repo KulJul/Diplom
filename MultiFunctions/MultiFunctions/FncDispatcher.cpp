@@ -75,12 +75,12 @@ typedef Loki::FnDispatcher<GameObject> MyDispatcher;
 
 int main()
 {
-	auto shape = new Rectangle();
-	auto brush = new BoldBrush();	
-	auto shapeDrawing = new ShapeDrawing();
+	//auto shape = new Rectangle();
+	//auto brush = new BoldBrush();	
+	//auto shapeDrawing = new ShapeDrawing();
 
-	shapeDrawing->Init();
-	shapeDrawing->Drawing(*shape, *brush);
+	//shapeDrawing->Init();
+	//shapeDrawing->Drawing(*shape, *brush);
 
 
 

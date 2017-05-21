@@ -12,9 +12,10 @@ struct ShapeDrawing
 
 	void Init()
 	{
+
 		dispatcher.Add<Triangle, ThinBrush, true >([this](Triangle& shape, ThinBrush& brush)
 		{
-			return Drawing(shape, brush);
+			return this->Drawing(shape, brush);
 		});
 
 		dispatcher.Add<Triangle, BoldBrush, true >([this](Triangle& shape, BoldBrush& brush)

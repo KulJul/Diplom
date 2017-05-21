@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Struct Name="Shape">
-    <Position X="1.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAA=</HashCode>
-      <FileName>Shape.h</FileName>
-    </TypeIdentifier>
-  </Struct>
   <Struct Name="Rectangle">
     <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
@@ -24,15 +17,22 @@
   <Struct Name="ShapeMetricVisitor">
     <Position X="5.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>ShapeMetricVisitor.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="AreaVisitor">
-    <Position X="6.75" Y="2.25" Width="1.5" />
+  <Struct Name="ShapeDrawing">
+    <Position X="4.5" Y="3.75" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ShapeMetricVisitor.h</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAACAIAAAAA=</HashCode>
+      <FileName>ShapeDrawing.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Shape">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAA=</HashCode>
+      <FileName>Shape.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="SumAngleVisitor">
@@ -42,11 +42,11 @@
       <FileName>ShapeMetricVisitor.h</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="ShapeDrawing">
-    <Position X="4.5" Y="3.75" Width="3" />
+  <Struct Name="AreaVisitor">
+    <Position X="6.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAACAIAAAAA=</HashCode>
-      <FileName>ShapeDrawing.h</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShapeMetricVisitor.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Font Name="Segoe UI" Size="9" />

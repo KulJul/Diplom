@@ -1,9 +1,14 @@
 #pragma once
 
-#include "Brush.h"
+#ifndef SHAPE_H
+#define SHAPE_H
+
+//#include "Brush.h"
 #include "ShapeMetricVisitor.h"
-#include "Observer.h"
-#include <vector>
+//#include "Observer.h"
+//#include <vector>
+
+
 
 struct Shape
 {
@@ -26,4 +31,12 @@ struct Shape
 	//{
 	//	
 	//}
+
+	virtual void foo()
+	{
+
+	}
 };
+
+
+#endif SHAPE_H

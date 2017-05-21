@@ -1,6 +1,9 @@
 #pragma once
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
 
 #include "Shape.h"
+
 
 struct  Rectangle : Shape
 {
@@ -16,4 +19,11 @@ struct  Rectangle : Shape
 	//{
 	//	//metricVivsitor.VisitRectangle(this);
 	//}
+
+	void foo()
+	{
+
+	}
 };
+
+#endif

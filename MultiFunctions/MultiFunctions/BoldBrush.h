@@ -8,6 +8,11 @@ struct BoldBrush
 	double radius;
 	double thickness;
 
+	void foo()
+	{
+
+	}
+
 	//void Draw()
 	//{
 
