@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MyExecObject">
+    <Position X="12" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TypeCollectionMake&lt;Head, Types...&gt;" Collapsed="true">
+    <Position X="15.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>library\typecollection.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Length&lt;TypeCollection&lt;Head, Tail&gt;&gt;" Collapsed="true">
+    <Position X="15.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>library\typecollection.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="IndexOf&lt;NullType, T&gt;" Collapsed="true">
+    <Position X="15.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>library\typecollection.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="game_object">
+    <Position X="8.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAEAGAAAAAAQAAABgAQAAAAA=</HashCode>
+      <FileName>Object.h</FileName>
+      <NewMemberFileName>library\game_hierarchy.hpp</NewMemberFileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="space_ship">
+    <Position X="8.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="space_station">
+    <Position X="11.25" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>wAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="asteroid">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAQAAAAAAAAAAAAAAAAAIAAAAAgAAAAAAAAAYIAA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

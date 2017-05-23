@@ -60,6 +60,8 @@ struct space_station
 
 	int ast_space_station_rot = 0;
 
+	int protective_field = 100;
+	int health = 100;
 
 	int InitModel()
 	{
@@ -106,7 +108,7 @@ struct asteroid
 	void InitModelTexture()
 	{
 		AUX_RGBImageRec *texture1;
-		texture1 = auxDIBImageLoadA("Data/aster.bmp");
+		texture1 = auxDIBImageLoadA("data/aster.bmp");
 		glGenTextures(1, &texture_ast);
 		glBindTexture(GL_TEXTURE_2D, texture_ast);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);

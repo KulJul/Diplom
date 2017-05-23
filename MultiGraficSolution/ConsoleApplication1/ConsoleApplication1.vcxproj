@@ -79,18 +79,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="library\Asteroid.cpp" />
-    <ClCompile Include="library\Collide.cpp" />
     <ClCompile Include="library\ContainerMap.cpp" />
     <ClCompile Include="library\DinamicMultimethod.cpp" />
     <ClCompile Include="library\FncDispatcher.cpp" />
     <ClCompile Include="library\FunctorDispatcher.cpp" />
-    <ClCompile Include="library\GameObject.cpp" />
     <ClCompile Include="library\MyMap.cpp" />
-    <ClCompile Include="library\SpaceShip.cpp" />
-    <ClCompile Include="library\SpaceStation.cpp" />
     <ClCompile Include="library\StaticMultimethod.cpp" />
-    <ClCompile Include="library\Сonversation.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MilkshapeModel.cpp" />
     <ClCompile Include="Model.cpp" />
@@ -105,11 +99,9 @@
     <Image Include="Data\Wood.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="library\Asteroid.h" />
+    <ClInclude Include="Collapsing.h" />
     <ClInclude Include="library\ContainerMap.h" />
     <ClInclude Include="library\FnDispetcher.h" />
-    <ClInclude Include="library\GameObject.h" />
-    <ClInclude Include="library\game_hierarchy.hpp" />
     <ClInclude Include="library\Loki\AbstractFactory.h" />
     <ClInclude Include="library\Loki\AssocVector.h" />
     <ClInclude Include="library\Loki\ContainerMap.h" />
@@ -141,8 +133,6 @@
     <ClInclude Include="library\MyMap.h" />
     <ClInclude Include="library\SimpleMiltimethodSeveral.h" />
     <ClInclude Include="library\SimpleMultimethodSim.h" />
-    <ClInclude Include="library\SpaceShip.h" />
-    <ClInclude Include="library\SpaceStantion.h" />
     <ClInclude Include="library\typecollection.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="MilkshapeModel.h" />
@@ -152,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Model.ms3d" />
+    <None Include="SimpleSeveral.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

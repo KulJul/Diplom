@@ -13,6 +13,7 @@
 #include "library/SimpleMiltimethodSeveral.h"
 #include "library/Loki/TypeCollection.h"
 #include "library/Loki/SimpleMultiMethod.h"
+#include "Collapsing.h"
 
 #pragma comment(lib, "winmm.lib")
 #pragma comment(lib, "Ws2_32.lib")
@@ -41,6 +42,8 @@ static vector<game_object*> vec;
 
 using MyDispatcher = StaticDispatcherTwo<MyExecObject, game_object, game_object, TYPELIST_3(space_ship, asteroid, space_station)>;
 MyDispatcher dsp;
+
+Collapsing collapsing;
 
 AUX_RGBImageRec *LoadBMP(const char *Filename)						
 {
@@ -113,9 +116,11 @@ void collide()
 			if (i >= j)
 				continue;
 
-			if (abs(get_obj_pointers()[i]->x - get_obj_pointers()[j]->x) < 80 &&
-				abs(get_obj_pointers()[i]->y - get_obj_pointers()[j]->y) < 80)
+			if (abs(get_obj_pointers()[i]->x - get_obj_pointers()[j]->x) < 10 &&
+				abs(get_obj_pointers()[i]->y - get_obj_pointers()[j]->y) < 10)
 			{
+				collapsing.Collapse(*(get_obj_pointers()[i]), *(get_obj_pointers()[j]));
+
 				MyExecObject exec;
 
 				dsp.Go(*get_obj_pointers()[i],*get_obj_pointers()[j], exec);
@@ -128,6 +133,9 @@ void collide()
 
 void InitGL(GLvoid)     
 {
+
+	collapsing.Init();
+
 	glScalef(10.0, 10.0, 10.0f);
 	station.pModel->reloadTextures();
 	ship.pModel->reloadTextures();

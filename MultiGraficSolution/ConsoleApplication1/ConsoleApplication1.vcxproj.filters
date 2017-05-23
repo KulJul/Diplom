@@ -34,6 +34,9 @@
     <Filter Include="Заголовочные файлы\library\MultiLoki">
       <UniqueIdentifier>{ee8707b5-99fd-40ce-943a-16cc1da9de26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\library\Relations">
+      <UniqueIdentifier>{11581615-dca9-4466-94fc-0dbd2460d812}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tgaload.cpp">
@@ -57,35 +60,17 @@
     <ClCompile Include="library\MyMap.cpp">
       <Filter>Заголовочные файлы\library</Filter>
     </ClCompile>
-    <ClCompile Include="library\Сonversation.cpp">
-      <Filter>Заголовочные файлы\library</Filter>
-    </ClCompile>
     <ClCompile Include="library\DinamicMultimethod.cpp">
       <Filter>Заголовочные файлы\library\Dinamic</Filter>
     </ClCompile>
-    <ClCompile Include="library\Asteroid.cpp">
-      <Filter>Заголовочные файлы\library\Obj</Filter>
-    </ClCompile>
     <ClCompile Include="library\StaticMultimethod.cpp">
       <Filter>Заголовочные файлы\library\Static</Filter>
-    </ClCompile>
-    <ClCompile Include="library\SpaceShip.cpp">
-      <Filter>Заголовочные файлы\library\Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="library\GameObject.cpp">
-      <Filter>Заголовочные файлы\library\Obj</Filter>
     </ClCompile>
     <ClCompile Include="library\FncDispatcher.cpp">
       <Filter>Заголовочные файлы\library\Dinamic</Filter>
     </ClCompile>
     <ClCompile Include="library\FunctorDispatcher.cpp">
       <Filter>Заголовочные файлы\library\Dinamic</Filter>
-    </ClCompile>
-    <ClCompile Include="library\SpaceStation.cpp">
-      <Filter>Заголовочные файлы\library\Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="library\Collide.cpp">
-      <Filter>Заголовочные файлы\library\Obj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,21 +199,6 @@
     <ClInclude Include="library\SimpleMultimethodSim.h">
       <Filter>Заголовочные файлы\library\Static</Filter>
     </ClInclude>
-    <ClInclude Include="library\Asteroid.h">
-      <Filter>Заголовочные файлы\library\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="library\SpaceShip.h">
-      <Filter>Заголовочные файлы\library\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="library\GameObject.h">
-      <Filter>Заголовочные файлы\library\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="library\game_hierarchy.hpp">
-      <Filter>Заголовочные файлы\library\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="library\SpaceStantion.h">
-      <Filter>Заголовочные файлы\library\Obj</Filter>
-    </ClInclude>
     <ClInclude Include="library\FnDispetcher.h">
       <Filter>Заголовочные файлы\library\Dinamic</Filter>
     </ClInclude>
@@ -238,8 +208,12 @@
     <ClInclude Include="library\Loki\SimpleMultiMethod.h">
       <Filter>Заголовочные файлы\library\MultiLoki</Filter>
     </ClInclude>
+    <ClInclude Include="Collapsing.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Model.ms3d" />
+    <None Include="SimpleSeveral.cd" />
   </ItemGroup>
 </Project>
