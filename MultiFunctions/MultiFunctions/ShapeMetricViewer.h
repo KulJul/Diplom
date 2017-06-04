@@ -25,6 +25,7 @@ struct ShapeMetricDirector
 	ShapeDrawing drawing;
 	MetricCounting counting;
 	Observing observing;
+	ColorChanging colorChanging;
 
 	Brush Brushes;
 	ShapeMetricVisitor Metrics;
@@ -32,28 +33,43 @@ struct ShapeMetricDirector
 	Shape Shapes;
 
 
-	void ReDrawingWithBrush(Brush* brush)
-	{
-		//выбираем все фигуры связанные с этой кистью
-		//for(Shape shape : Shapes)
-		//{
-		//	if(shape.brush == brush)
-		//	{
-		//		shape.Render();
-		//		shape.Notify();
-		//	}
-		//}
-	}
+	//void ReDrawingWithBrush(Brush* brush)
+	//{
+	//	//выбираем все фигуры связанные с этой кистью
+	//	//for(Shape shape : Shapes)
+	//	//{
+	//	//	if(shape.brush == brush)
+	//	//	{
+	//	//		shape.Render();
+	//	//		shape.Notify();
+	//	//	}
+	//	//}
+	//}
 
-	void RecalculateMetricsAndRedraw(Shape* shape)
-	{
-		//for (ShapeMetricVisitor metric : Metrics)
-		//{
-		//	shape->Accept(metric);
-		//	shape->Notify();
-		//}
-	}
+	//void RecalculateMetricsAndRedraw(Shape* shape)
+	//{
+	//	//for (ShapeMetricVisitor metric : Metrics)
+	//	//{
+	//	//	shape->Accept(metric);
+	//	//	shape->Notify();
+	//	//}
+	//}
 
 
+
+
+
+
+};
+
+
+struct SimpleShapeMetricDirector : ShapeMetricDirector
+{
+
+};
+
+
+struct ShapeMetricDirectorWithVerification :ShapeMetricDirector
+{
 
 };

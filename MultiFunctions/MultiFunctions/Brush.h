@@ -17,8 +17,8 @@ struct Brush
 	//}
 
 
-	virtual void ChangeColor(int newColor)
-	{
-		director.ReDrawingWithBrush(this);
-	}
+	//virtual void ChangeColor(int newColor)
+	//{
+	//	director.ReDrawingWithBrush(this);
+	//}
 };

@@ -15,7 +15,7 @@ struct Shape
 	double position_x;
 	double position_y;
 
-	ShapeMetricDirector director;
+	//ShapeMetricDirector director;
 
 	//Brush* brush;
 
@@ -36,10 +36,10 @@ struct Shape
 	//	//оповещает обсервер об изменениях
 	//}
 
-	virtual void SizeWasChanged()
-	{
-		director.RecalculateMetricsAndRedraw(this);
-	}
+	//virtual void SizeWasChanged()
+	//{
+	//	director.RecalculateMetricsAndRedraw(this);
+	//}
 
 
 

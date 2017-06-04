@@ -64,6 +64,9 @@
     <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Mediator">
       <UniqueIdentifier>{5cb6675b-3b95-4c4c-8457-a1667a19b9bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations\ColorChanging">
+      <UniqueIdentifier>{4b0b8a55-5b63-4824-9913-2a3b2bc40d21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContainerMap.cpp">
@@ -104,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="DrawingExample.cpp">
       <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorChanging.cpp">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Relations\ColorChanging</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

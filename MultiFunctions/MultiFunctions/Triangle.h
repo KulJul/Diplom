@@ -18,8 +18,8 @@ struct  Triangle : Shape
 	//	//metricVivsitor.VisitRectangle(this);
 	//}
 
-	void SizeWasChanged()
-	{
+	//void SizeWasChanged()
+	//{
 
-	}
+	//}
 };

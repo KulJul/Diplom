@@ -20,10 +20,10 @@ struct  Rectangle : Shape
 	//	//metricVivsitor.VisitRectangle(this);
 	//}
 
-	void SizeWasChanged()
-	{
+	//void SizeWasChanged()
+	//{
 
-	}
+	//}
 
 
 };

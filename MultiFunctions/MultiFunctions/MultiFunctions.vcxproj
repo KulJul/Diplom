@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="Collide.cpp" />
+    <ClCompile Include="ColorChanging.cpp" />
     <ClCompile Include="ContainerMap.cpp" />
     <ClCompile Include="DrawingExample.cpp" />
     <ClCompile Include="FncDispatcher.cpp" />
