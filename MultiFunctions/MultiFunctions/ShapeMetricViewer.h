@@ -23,28 +23,48 @@ struct ShapeMetricDirector
 	Observer Observers;
 	Shape Shapes;
 
+	virtual void ReDrawingWithBrush(Brush* brush)
+	{
+
+	}
+
+	virtual void RecalculateMetricsAndRedraw(Shape* shape)
+	{
+
+	}
+
+};
+
+struct SimpleShapeMetricDirector : ShapeMetricDirector
+{
+
 	void ReDrawingWithBrush(Brush* brush)
 	{
-		//выбираем все фигуры связанные с этой кистью
-		//for(Shape shape : Shapes)
-		//{
-		//	if(shape.brush == brush)
-		//	{
-		//		shape.Render();
-		//		shape.Notify();
-		//	}
-		//}
+
 	}
 
 	void RecalculateMetricsAndRedraw(Shape* shape)
 	{
-		//for (ShapeMetricVisitor metric : Metrics)
-		//{
-		//	shape->Accept(metric);
-		//	shape->Notify();
-		//}
+
 	}
 
+};
 
+
+struct ShapeMetricDirectorWithVerification : ShapeMetricDirector
+{
+
+	void ReDrawingWithBrush(Brush* brush)
+	{
+
+	}
+
+	void RecalculateMetricsAndRedraw(Shape* shape)
+	{
+
+	}
 
 };
+
+
+
