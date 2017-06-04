@@ -15,8 +15,8 @@
         <Point X="6.125" Y="3.06" />
         <Point X="5.882" Y="3.06" Type="JumpStart" />
         <Point X="5.716" Y="3.06" Type="JumpEnd" />
-        <Point X="5.431" Y="3.06" Type="JumpStart" />
-        <Point X="5.265" Y="3.06" Type="JumpEnd" />
+        <Point X="5.462" Y="3.06" Type="JumpStart" />
+        <Point X="5.295" Y="3.06" Type="JumpEnd" />
         <Point X="5.041" Y="3.06" Type="JumpStart" />
         <Point X="4.874" Y="3.06" Type="JumpEnd" />
         <Point X="4" Y="3.06" />
@@ -39,7 +39,7 @@
     <Position X="4.75" Y="5" Width="2.5" />
     <AssociationLine Name="Shapes" Type="Shape">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.225" Y="-0.795" />
+        <Position X="0.303" Y="-0.58" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="Brushes" Type="Brush">
@@ -136,7 +136,7 @@
     </TypeIdentifier>
   </Struct>
   <Struct Name="ShapeMetricVisitor">
-    <Position X="7.5" Y="1" Width="1.5" />
+    <Position X="7.5" Y="1" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>ShapeMetricVisitor.h</FileName>
