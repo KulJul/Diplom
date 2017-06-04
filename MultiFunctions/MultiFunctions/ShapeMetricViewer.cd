@@ -1,17 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Struct Name="Shape">
-    <Position X="4.75" Y="5.25" Width="1.75" />
+    <Position X="8.5" Y="5.25" Width="1.75" />
+    <AssociationLine Name="director" Type="ShapeMetricDirector">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.304" Y="0.177" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="brush" Type="Brush" ManuallyRouted="true">
+      <Path>
+        <Point X="10.156" Y="5.25" />
+        <Point X="10.156" Y="4.863" />
+        <Point X="6.125" Y="4.863" />
+        <Point X="6.125" Y="3.06" />
+        <Point X="5.882" Y="3.06" Type="JumpStart" />
+        <Point X="5.716" Y="3.06" Type="JumpEnd" />
+        <Point X="5.431" Y="3.06" Type="JumpStart" />
+        <Point X="5.265" Y="3.06" Type="JumpEnd" />
+        <Point X="5.041" Y="3.06" Type="JumpStart" />
+        <Point X="4.874" Y="3.06" Type="JumpEnd" />
+        <Point X="4" Y="3.06" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.205" Y="-0.236" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AIAIAAAAAgAQAAAAAAAAAAAAAAAAAABMABAAAAQAAAA=</HashCode>
       <FileName>Shape.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="director" />
+      <Field Name="brush" />
+      <Field Name="observers" />
     </ShowAsAssociation>
   </Struct>
   <Struct Name="ShapeMetricDirector">
-    <Position X="3.25" Y="3.25" Width="2.5" />
+    <Position X="4.75" Y="5" Width="2.5" />
+    <AssociationLine Name="Shapes" Type="Shape">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.225" Y="-0.795" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Brushes" Type="Brush">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.143" Y="-0.286" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Observers" Type="Observer">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.021" Y="0.216" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAEAAAAAAAAAABABAAAAAAAAACAI=</HashCode>
       <FileName>ShapeMetricViewer.h</FileName>
@@ -24,7 +64,12 @@
     </ShowAsAssociation>
   </Struct>
   <Struct Name="Brush">
-    <Position X="2" Y="0.5" Width="2.25" />
+    <Position X="1.75" Y="2" Width="2.25" />
+    <AssociationLine Name="director" Type="ShapeMetricDirector">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.029" Y="0.21" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>Brush.h</FileName>
@@ -34,14 +79,78 @@
     </ShowAsAssociation>
   </Struct>
   <Struct Name="Observer">
-    <Position X="2.75" Y="5.5" Width="1.5" />
+    <Position X="4.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Observer.h</FileName>
     </TypeIdentifier>
   </Struct>
+  <Struct Name="Rectangle">
+    <Position X="7.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAIAAAAAAAAAAAQAAAAAAAAAAAAAAAABAAAAQAAAA=</HashCode>
+      <FileName>Rectangle.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Triangle">
+    <Position X="9.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBAIAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAARAAAA=</HashCode>
+      <FileName>Triangle.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="_3DObserver">
+    <Position X="3" Y="9.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAgCAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>3DObserver.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FlatObserver">
+    <Position X="5.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAGAAAAAAA=</HashCode>
+      <FileName>FlatObserver.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BoldBrush">
+    <Position X="1.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BoldBrush.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ThinBrush">
+    <Position X="3" Y="5" Width="1.5" />
+    <InheritanceLine Type="Brush" FixedToPoint="true">
+      <Path>
+        <Point X="2.875" Y="3.94" />
+        <Point X="2.875" Y="4.625" />
+        <Point X="3.75" Y="4.625" />
+        <Point X="3.75" Y="5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAgAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>ThinBrush.h</FileName>
+    </TypeIdentifier>
+  </Struct>
   <Struct Name="ShapeMetricVisitor">
-    <Position X="5.25" Y="1.25" Width="1.5" />
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ShapeMetricVisitor.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="AreaVisitor">
+    <Position X="8.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>ShapeMetricVisitor.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="SumAngleVisitor">
+    <Position X="6.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>ShapeMetricVisitor.h</FileName>
