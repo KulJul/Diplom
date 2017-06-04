@@ -97,6 +97,7 @@
     <None Include="Drawing.cd" />
     <None Include="MetricVisitors.cd" />
     <None Include="Observing.cd" />
+    <None Include="ShapeMeticViewerWithMultimethod.cd" />
     <None Include="ShapeMetricViewer.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

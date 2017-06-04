@@ -18,8 +18,8 @@ struct _3DObserver : Observer
 
 	//}
 
-	void foo()
-	{
+	//void foo()
+	//{
 
-	}
+	//}
 };

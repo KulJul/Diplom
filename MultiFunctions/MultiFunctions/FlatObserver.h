@@ -18,8 +18,8 @@ struct FlatObserver : Observer
 
 	//}
 
-	void foo()
-	{
+	//void foo()
+	//{
 
-	}
+	//}
 };

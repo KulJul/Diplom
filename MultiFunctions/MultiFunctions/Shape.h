@@ -17,24 +17,24 @@ struct Shape
 
 	ShapeMetricDirector director;
 
-	Brush* brush;
+	//Brush* brush;
 
-	virtual void Render()
-	{
-		brush -> Draw();
-	}
+	//virtual void Render()
+	//{
+	//	brush -> Draw();
+	//}
 
-	virtual void Accept(ShapeMetricVisitor& metricVivsitor)
-	{
-	
-	}
+	//virtual void Accept(ShapeMetricVisitor& metricVivsitor)
+	//{
+	//
+	//}
 
-	Observer observers;
+	//Observer observers;
 
-	void Notify()
-	{
-		//оповещает обсервер об изменениях
-	}
+	//void Notify()
+	//{
+	//	//оповещает обсервер об изменениях
+	//}
 
 	virtual void SizeWasChanged()
 	{

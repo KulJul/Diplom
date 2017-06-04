@@ -281,5 +281,6 @@
     <None Include="MetricVisitors.cd" />
     <None Include="Observing.cd" />
     <None Include="ShapeMetricViewer.cd" />
+    <None Include="ShapeMeticViewerWithMultimethod.cd" />
   </ItemGroup>
 </Project>

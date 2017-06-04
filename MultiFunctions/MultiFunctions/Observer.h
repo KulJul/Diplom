@@ -3,14 +3,14 @@
 struct Observer
 {
 
-	virtual void Draw()
-	{
-		
-	}
+	//virtual void Draw()
+	//{
+	//	
+	//}
 
-	virtual void Update()
-	{
-		
-	}
+	//virtual void Update()
+	//{
+	//	
+	//}
 
 };

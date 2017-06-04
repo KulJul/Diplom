@@ -6,6 +6,10 @@
 #include "Shape.h"
 #include <vector>
 
+#include "ShapeDrawing.h"
+#include "MetricCounting.h"
+#include "Observing.h"
+
 struct  Brush;
 struct ShapeMetricVisitor;
 struct  Observer;
@@ -18,10 +22,15 @@ struct ShapeMetricDirector
 	//std::vector<Observer> Observers;
 	//std::vector<Shape> Shapes;
 
+	ShapeDrawing drawing;
+	MetricCounting counting;
+	Observing observing;
+
 	Brush Brushes;
 	ShapeMetricVisitor Metrics;
 	Observer Observers;
 	Shape Shapes;
+
 
 	void ReDrawingWithBrush(Brush* brush)
 	{

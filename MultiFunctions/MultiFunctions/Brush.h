@@ -11,10 +11,10 @@ struct Brush
 	ShapeMetricDirector director;
 
 
-	virtual void Draw()
-	{
-		
-	}
+	//virtual void Draw()
+	//{
+	//	
+	//}
 
 
 	virtual void ChangeColor(int newColor)
