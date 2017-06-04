@@ -1,17 +1,24 @@
 #pragma once
 
+#include "ShapeMetricViewer.h"
+
+
 struct Brush
 {
 	double x;
 	double y;
 
-	virtual void foo()
-	{
+	ShapeMetricDirector director;
 
+
+	virtual void Draw()
+	{
+		
 	}
 
-	//virtual void Draw()
-	//{
-	//	
-	//}
+
+	virtual void ChangeColor(int newColor)
+	{
+		director.ReDrawingWithBrush(this);
+	}
 };

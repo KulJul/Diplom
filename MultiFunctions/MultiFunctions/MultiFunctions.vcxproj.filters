@@ -46,20 +46,23 @@
     <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations\Metric">
       <UniqueIdentifier>{be3b69d6-0a3a-4d41-b1fc-6a8d9e84c87d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brush">
-      <UniqueIdentifier>{fcde563f-f341-4716-8200-5dce40c9cb24}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Shape">
       <UniqueIdentifier>{dee2d243-d0ed-46c1-b0fe-143a24c9aa63}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Metric">
-      <UniqueIdentifier>{059ce4ac-ee49-4540-8d9a-6175e60e3f37}</UniqueIdentifier>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations\Observing">
+      <UniqueIdentifier>{f619e1cb-3a89-43fd-aa09-18d5acf314a7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Observer">
       <UniqueIdentifier>{5b7aa03b-8216-423a-8937-bb6e3494c0be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Заголовочные файлы\FncDispatcherExample\Relations\Observing">
-      <UniqueIdentifier>{f619e1cb-3a89-43fd-aa09-18d5acf314a7}</UniqueIdentifier>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brige">
+      <UniqueIdentifier>{fcde563f-f341-4716-8200-5dce40c9cb24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Visitor">
+      <UniqueIdentifier>{059ce4ac-ee49-4540-8d9a-6175e60e3f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Mediator">
+      <UniqueIdentifier>{5cb6675b-3b95-4c4c-8457-a1667a19b9bd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -231,13 +234,13 @@
       <Filter>Заголовочные файлы\FncDispatcherExample\Relations\Metric</Filter>
     </ClInclude>
     <ClInclude Include="BoldBrush.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brush</Filter>
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brige</Filter>
     </ClInclude>
     <ClInclude Include="Brush.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brush</Filter>
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brige</Filter>
     </ClInclude>
     <ClInclude Include="ThinBrush.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brush</Filter>
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Brige</Filter>
     </ClInclude>
     <ClInclude Include="Rectangle.h">
       <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Shape</Filter>
@@ -249,7 +252,7 @@
       <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Shape</Filter>
     </ClInclude>
     <ClInclude Include="ShapeMetricVisitor.h">
-      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Metric</Filter>
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Visitor</Filter>
     </ClInclude>
     <ClInclude Include="3DObserver.h">
       <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Observer</Filter>
@@ -263,6 +266,9 @@
     <ClInclude Include="Observing.h">
       <Filter>Заголовочные файлы\FncDispatcherExample\Relations\Observing</Filter>
     </ClInclude>
+    <ClInclude Include="ShapeMetricViewer.h">
+      <Filter>Заголовочные файлы\FncDispatcherExample\Objects\Drawing\Mediator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MultiFunctions.rc">
@@ -274,5 +280,6 @@
     <None Include="Drawing.cd" />
     <None Include="MetricVisitors.cd" />
     <None Include="Observing.cd" />
+    <None Include="ShapeMetricViewer.cd" />
   </ItemGroup>
 </Project>

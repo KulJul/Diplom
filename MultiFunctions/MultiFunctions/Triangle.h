@@ -8,17 +8,17 @@ struct  Triangle : Shape
 	double base;
 	double hight;
 
-	//void Render()
-	//{
-	//	brush -> Draw();
-	//}
+	void Render()
+	{
+		brush -> Draw();
+	}
 
-	//void Accept(ShapeMetricVisitor& metricVivsitor)
-	//{
-	//	//metricVivsitor.VisitRectangle(this);
-	//}
+	void Accept(ShapeMetricVisitor& metricVivsitor)
+	{
+		//metricVivsitor.VisitRectangle(this);
+	}
 
-	void foo()
+	void SizeWasChanged()
 	{
 
 	}

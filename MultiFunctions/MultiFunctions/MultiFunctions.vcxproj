@@ -81,6 +81,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="ShapeDrawing.h" />
+    <ClInclude Include="ShapeMetricViewer.h" />
     <ClInclude Include="ShapeMetricVisitor.h" />
     <ClInclude Include="SpaceShip.h" />
     <ClInclude Include="SpaceStantion.h" />
@@ -96,6 +97,7 @@
     <None Include="Drawing.cd" />
     <None Include="MetricVisitors.cd" />
     <None Include="Observing.cd" />
+    <None Include="ShapeMetricViewer.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{28AC613A-930F-435D-A75E-6699D1B99324}</ProjectGuid>
